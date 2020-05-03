@@ -10,8 +10,8 @@
 		1D1F90A0244F93FA00B03B34 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1F909F244F93FA00B03B34 /* LoginViewController.swift */; };
 		1D41DD542450C622000E91F3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D41DD532450C622000E91F3 /* SignUpViewController.swift */; };
 		1D41DD582450F6AF000E91F3 /* LoginButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D41DD572450F6AF000E91F3 /* LoginButtons.swift */; };
+		1D87EC23245F5BAB00043947 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D87EC22245F5BAB00043947 /* AppDelegate.swift */; };
 		1DA5683024536889008E2D41 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA5682F24536889008E2D41 /* User.swift */; };
-		1DA853DF244931BB002AA7A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA853DE244931BB002AA7A3 /* AppDelegate.swift */; };
 		1DA853E1244931BB002AA7A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA853E0244931BB002AA7A3 /* SceneDelegate.swift */; };
 		1DA853E3244931BB002AA7A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA853E2244931BB002AA7A3 /* ViewController.swift */; };
 		1DA853E6244931BB002AA7A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DA853E4244931BB002AA7A3 /* Main.storyboard */; };
@@ -53,9 +53,9 @@
 		1D41DD532450C622000E91F3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		1D41DD552450EAA0000E91F3 /* COLORS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = COLORS.md; sourceTree = "<group>"; };
 		1D41DD572450F6AF000E91F3 /* LoginButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButtons.swift; sourceTree = "<group>"; };
+		1D87EC22245F5BAB00043947 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DA5682F24536889008E2D41 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1DA853DB244931BB002AA7A3 /* LoveQuick_UIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoveQuick_UIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1DA853DE244931BB002AA7A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DA853E0244931BB002AA7A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1DA853E2244931BB002AA7A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1DA853E5244931BB002AA7A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -162,7 +162,7 @@
 				1DAB9D6F24567BDD00C1F06B /* LoveQuick_UIKit.entitlements */,
 				1D41DD562450F68D000E91F3 /* Models */,
 				1D9928362450BF3000E9F4C0 /* View Controllers */,
-				1DA853DE244931BB002AA7A3 /* AppDelegate.swift */,
+				1D87EC22245F5BAB00043947 /* AppDelegate.swift */,
 				1DA853E0244931BB002AA7A3 /* SceneDelegate.swift */,
 				1DA853E4244931BB002AA7A3 /* Main.storyboard */,
 				1DA853E7244931BD002AA7A3 /* Assets.xcassets */,
@@ -456,10 +456,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D87EC23245F5BAB00043947 /* AppDelegate.swift in Sources */,
 				1D1F90A0244F93FA00B03B34 /* LoginViewController.swift in Sources */,
 				1D41DD542450C622000E91F3 /* SignUpViewController.swift in Sources */,
 				1DA853E3244931BB002AA7A3 /* ViewController.swift in Sources */,
-				1DA853DF244931BB002AA7A3 /* AppDelegate.swift in Sources */,
 				1DA85413244A0D00002AA7A3 /* Heart.swift in Sources */,
 				1DAB9D6E245678EB00C1F06B /* UserListViewController.swift in Sources */,
 				1DA5683024536889008E2D41 /* User.swift in Sources */,
