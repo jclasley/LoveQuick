@@ -40,6 +40,22 @@ class LoveQuick_UIKitTests: XCTestCase {
 	
 	//MARK: auth tests
 	
+	func testGettingLoveList() throws {
+		let authReturn = XCTestExpectation(description: "user class created from currentUser")
+		Auth.auth().signIn(withEmail: "jon.lasley@gmail.com", password: "Id268048") { result, error in
+			if let error = error {
+				print(error)
+			} else if let user = Auth.auth().currentUser {
+					self.user = LoveQuick_UIKit.User(uid: user.uid, displayName: user.displayName, email: user.email)
+					XCTAssert(self.user?.loveListWithNames[0] == "Alexia")
+				authReturn.fulfill()
+				}
+		}
+		
+		wait(for: [authReturn], timeout: 10)
+		
+	}
+	
 	func testSignIn() throws {
 		
 		Auth.auth().signIn(withEmail: "jon.lasley@gmail.com", password: "abc123") { result, error in
