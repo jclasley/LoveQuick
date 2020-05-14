@@ -14,6 +14,7 @@
 		1D9B95F1246C7F4F0074087E /* LoveListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B95F0246C7F4F0074087E /* LoveListTableViewCell.swift */; };
 		1D9B95F3246C82EC0074087E /* AnchorFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B95F2246C82EC0074087E /* AnchorFunction.swift */; };
 		1D9B95F5246C847E0074087E /* LoveListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B95F4246C847E0074087E /* LoveListTableViewController.swift */; };
+		1D9B95F7246D7FA60074087E /* ContainedTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B95F6246D7FA60074087E /* ContainedTable.swift */; };
 		1DA5683024536889008E2D41 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA5682F24536889008E2D41 /* User.swift */; };
 		1DA853E1244931BB002AA7A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA853E0244931BB002AA7A3 /* SceneDelegate.swift */; };
 		1DA853E3244931BB002AA7A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA853E2244931BB002AA7A3 /* ViewController.swift */; };
@@ -59,6 +60,7 @@
 		1D9B95F0246C7F4F0074087E /* LoveListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveListTableViewCell.swift; sourceTree = "<group>"; };
 		1D9B95F2246C82EC0074087E /* AnchorFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorFunction.swift; sourceTree = "<group>"; };
 		1D9B95F4246C847E0074087E /* LoveListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveListTableViewController.swift; sourceTree = "<group>"; };
+		1D9B95F6246D7FA60074087E /* ContainedTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainedTable.swift; sourceTree = "<group>"; };
 		1DA5682F24536889008E2D41 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1DA853DB244931BB002AA7A3 /* LoveQuick_UIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoveQuick_UIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DA853E0244931BB002AA7A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			children = (
 				1D41DD572450F6AF000E91F3 /* LoginButtons.swift */,
 				1D9B95F0246C7F4F0074087E /* LoveListTableViewCell.swift */,
+				1D9B95F6246D7FA60074087E /* ContainedTable.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -482,6 +485,7 @@
 				1DA853E1244931BB002AA7A3 /* SceneDelegate.swift in Sources */,
 				1DEE32B0244BBAE700105930 /* RandomNiceties.swift in Sources */,
 				1D9B95F5246C847E0074087E /* LoveListTableViewController.swift in Sources */,
+				1D9B95F7246D7FA60074087E /* ContainedTable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
