@@ -26,7 +26,10 @@
 		1DA85413244A0D00002AA7A3 /* Heart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA85412244A0D00002AA7A3 /* Heart.swift */; };
 		1DAB15122454EB9900F7C156 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1DAB15112454EB9900F7C156 /* GoogleService-Info.plist */; };
 		1DAB9D7124567BE400C1F06B /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DAB9D7024567BE400C1F06B /* AuthenticationServices.framework */; };
+		1DC1BF49246DE1B3000E831E /* LoveListCapsuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC1BF48246DE1B3000E831E /* LoveListCapsuleViewController.swift */; };
 		1DEE32B0244BBAE700105930 /* RandomNiceties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEE32AF244BBAE700105930 /* RandomNiceties.swift */; };
+		1DF3AB2B2472E6AB008EBCDE /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF3AB2A2472E6AB008EBCDE /* SideMenuTableViewController.swift */; };
+		1DF3AB2E247318F6008EBCDE /* ConvenienceFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF3AB2D247318F6008EBCDE /* ConvenienceFunctions.swift */; };
 		8F6F566686DB56C6F37216DF /* Pods_LoveQuick_UIKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7990C9FAF42AEC25DDB442F3 /* Pods_LoveQuick_UIKitTests.framework */; };
 		D9AAC68FE72417C81AFE530F /* Pods_LoveQuick_UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 143131E6E54CCBBE366BCBA5 /* Pods_LoveQuick_UIKit.framework */; };
 		EFD7D827479AADC8392C6129 /* Pods_LoveQuick_UIKit_LoveQuick_UIKitUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE919D4B421181470746DF67 /* Pods_LoveQuick_UIKit_LoveQuick_UIKitUITests.framework */; };
@@ -79,7 +82,10 @@
 		1DAB15112454EB9900F7C156 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1DAB9D6F24567BDD00C1F06B /* LoveQuick_UIKit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LoveQuick_UIKit.entitlements; sourceTree = "<group>"; };
 		1DAB9D7024567BE400C1F06B /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
+		1DC1BF48246DE1B3000E831E /* LoveListCapsuleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveListCapsuleViewController.swift; sourceTree = "<group>"; };
 		1DEE32AF244BBAE700105930 /* RandomNiceties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNiceties.swift; sourceTree = "<group>"; };
+		1DF3AB2A2472E6AB008EBCDE /* SideMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewController.swift; sourceTree = "<group>"; };
+		1DF3AB2D247318F6008EBCDE /* ConvenienceFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvenienceFunctions.swift; sourceTree = "<group>"; };
 		513D1CE3B9E1B0FC572510CD /* Pods-LoveQuick_UIKit-LoveQuick_UIKitUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoveQuick_UIKit-LoveQuick_UIKitUITests.debug.xcconfig"; path = "Target Support Files/Pods-LoveQuick_UIKit-LoveQuick_UIKitUITests/Pods-LoveQuick_UIKit-LoveQuick_UIKitUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7503EB4ADE2A6A033152A118 /* Pods-LoveQuick_UIKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoveQuick_UIKitTests.release.xcconfig"; path = "Target Support Files/Pods-LoveQuick_UIKitTests/Pods-LoveQuick_UIKitTests.release.xcconfig"; sourceTree = "<group>"; };
 		7990C9FAF42AEC25DDB442F3 /* Pods_LoveQuick_UIKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoveQuick_UIKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +151,8 @@
 				1DA853E2244931BB002AA7A3 /* ViewController.swift */,
 				1D41DD532450C622000E91F3 /* SignUpViewController.swift */,
 				1D9B95F4246C847E0074087E /* LoveListTableViewController.swift */,
+				1DC1BF48246DE1B3000E831E /* LoveListCapsuleViewController.swift */,
+				1DF3AB2A2472E6AB008EBCDE /* SideMenuTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -187,6 +195,7 @@
 				1D41DD552450EAA0000E91F3 /* COLORS.md */,
 				1DAB15112454EB9900F7C156 /* GoogleService-Info.plist */,
 				1D9B95F2246C82EC0074087E /* AnchorFunction.swift */,
+				1DF3AB2D247318F6008EBCDE /* ConvenienceFunctions.swift */,
 			);
 			path = LoveQuick_UIKit;
 			sourceTree = "<group>";
@@ -263,6 +272,7 @@
 				1DA853ED244931BD002AA7A3 /* Sources */,
 				1DA853EE244931BD002AA7A3 /* Frameworks */,
 				1DA853EF244931BD002AA7A3 /* Resources */,
+				7703AAC244CD86208FE1DBC6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -432,6 +442,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		7703AAC244CD86208FE1DBC6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LoveQuick_UIKitTests/Pods-LoveQuick_UIKitTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LoveQuick_UIKitTests/Pods-LoveQuick_UIKitTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LoveQuick_UIKitTests/Pods-LoveQuick_UIKitTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		CD5E7873A259CB1D297D24D2 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -479,10 +506,13 @@
 				1DA853E3244931BB002AA7A3 /* ViewController.swift in Sources */,
 				1DA85413244A0D00002AA7A3 /* Heart.swift in Sources */,
 				1D9B95F1246C7F4F0074087E /* LoveListTableViewCell.swift in Sources */,
+				1DF3AB2B2472E6AB008EBCDE /* SideMenuTableViewController.swift in Sources */,
 				1DA5683024536889008E2D41 /* User.swift in Sources */,
 				1D9B95F3246C82EC0074087E /* AnchorFunction.swift in Sources */,
 				1D41DD582450F6AF000E91F3 /* LoginButtons.swift in Sources */,
 				1DA853E1244931BB002AA7A3 /* SceneDelegate.swift in Sources */,
+				1DF3AB2E247318F6008EBCDE /* ConvenienceFunctions.swift in Sources */,
+				1DC1BF49246DE1B3000E831E /* LoveListCapsuleViewController.swift in Sources */,
 				1DEE32B0244BBAE700105930 /* RandomNiceties.swift in Sources */,
 				1D9B95F5246C847E0074087E /* LoveListTableViewController.swift in Sources */,
 				1D9B95F7246D7FA60074087E /* ContainedTable.swift in Sources */,

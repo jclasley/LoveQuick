@@ -27,8 +27,8 @@
             filePath = "LoveQuick_UIKit/View Controllers/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -52,8 +52,8 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "FAADF039-B5D4-44A9-A5EC-80ED15382A16"
-            shouldBeEnabled = "Yes"
+            uuid = "4B09CE02-5DEB-4C65-A575-2C341B50FA89"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LoveQuick_UIKit/View Controllers/LoveListTableViewController.swift"

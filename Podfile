@@ -10,9 +10,15 @@ pod 'Firebase/Analytics'
 pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
 pod 'FirebaseFirestoreSwift'
+pod 'RxSwift', '~> 5'
+pod 'RxCocoa', '~> 5'
+
   target 'LoveQuick_UIKitTests' do
     inherit! :search_paths
     # Pods for testing
+
+    pod 'RxBlocking', '~> 5'
+    pod 'RxTest', '~> 5'
   end
 
   target 'LoveQuick_UIKitUITests' do

@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:StylesAndAnimations.playground">
+   </FileRef>
+   <FileRef
       location = "group:LoveQuick_UIKit.xcodeproj">
    </FileRef>
    <FileRef
