@@ -12,6 +12,8 @@ pod 'Firebase/Firestore'
 pod 'FirebaseFirestoreSwift'
 pod 'RxSwift', '~> 5'
 pod 'RxCocoa', '~> 5'
+pod 'Hero'
+pod 'SideMenu', '~> 6.0'
 
   target 'LoveQuick_UIKitTests' do
     inherit! :search_paths
