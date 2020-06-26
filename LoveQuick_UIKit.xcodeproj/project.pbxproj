@@ -10,12 +10,13 @@
 		1D1F90A0244F93FA00B03B34 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1F909F244F93FA00B03B34 /* LoginViewController.swift */; };
 		1D41DD542450C622000E91F3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D41DD532450C622000E91F3 /* SignUpViewController.swift */; };
 		1D41DD582450F6AF000E91F3 /* LoginButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D41DD572450F6AF000E91F3 /* LoginButtons.swift */; };
+		1D63843B2495BF2100FD8272 /* LoveListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D63843A2495BF2100FD8272 /* LoveListViewController.swift */; };
 		1D87EC23245F5BAB00043947 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D87EC22245F5BAB00043947 /* AppDelegate.swift */; };
 		1D8E01A6249052A800F4A66A /* RandomUserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8E01A5249052A800F4A66A /* RandomUserProfile.swift */; };
 		1D9B95F1246C7F4F0074087E /* LoveListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B95F0246C7F4F0074087E /* LoveListTableViewCell.swift */; };
 		1D9B95F3246C82EC0074087E /* AnchorFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B95F2246C82EC0074087E /* AnchorFunction.swift */; };
-		1D9B95F5246C847E0074087E /* LoveListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B95F4246C847E0074087E /* LoveListTableViewController.swift */; };
 		1D9B95F7246D7FA60074087E /* ContainedTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B95F6246D7FA60074087E /* ContainedTable.swift */; };
+		1D9E5640249C1F7100657E26 /* LoveListTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9E563F249C1F7100657E26 /* LoveListTableTableViewController.swift */; };
 		1DA5683024536889008E2D41 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA5682F24536889008E2D41 /* User.swift */; };
 		1DA81B002489A5F000A048A6 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA81AFF2489A5F000A048A6 /* LoadingViewController.swift */; };
 		1DA81B04248B1F5A00A048A6 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA81B03248B1F5A00A048A6 /* Globals.swift */; };
@@ -29,8 +30,8 @@
 		1DA85413244A0D00002AA7A3 /* Heart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA85412244A0D00002AA7A3 /* Heart.swift */; };
 		1DAB15122454EB9900F7C156 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1DAB15112454EB9900F7C156 /* GoogleService-Info.plist */; };
 		1DAB9D7124567BE400C1F06B /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DAB9D7024567BE400C1F06B /* AuthenticationServices.framework */; };
+		1DCA08482491BC36003B5682 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCA08472491BC36003B5682 /* MenuViewController.swift */; };
 		1DEE32B0244BBAE700105930 /* RandomNiceties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEE32AF244BBAE700105930 /* RandomNiceties.swift */; };
-		1DF3AB2B2472E6AB008EBCDE /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF3AB2A2472E6AB008EBCDE /* SideMenuTableViewController.swift */; };
 		1DF3AB2E247318F6008EBCDE /* ConvenienceFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF3AB2D247318F6008EBCDE /* ConvenienceFunctions.swift */; };
 		8F6F566686DB56C6F37216DF /* Pods_LoveQuick_UIKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7990C9FAF42AEC25DDB442F3 /* Pods_LoveQuick_UIKitTests.framework */; };
 		D9AAC68FE72417C81AFE530F /* Pods_LoveQuick_UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 143131E6E54CCBBE366BCBA5 /* Pods_LoveQuick_UIKit.framework */; };
@@ -61,12 +62,13 @@
 		1D41DD532450C622000E91F3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		1D41DD552450EAA0000E91F3 /* COLORS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = COLORS.md; sourceTree = "<group>"; };
 		1D41DD572450F6AF000E91F3 /* LoginButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButtons.swift; sourceTree = "<group>"; };
+		1D63843A2495BF2100FD8272 /* LoveListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveListViewController.swift; sourceTree = "<group>"; };
 		1D87EC22245F5BAB00043947 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D8E01A5249052A800F4A66A /* RandomUserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserProfile.swift; sourceTree = "<group>"; };
 		1D9B95F0246C7F4F0074087E /* LoveListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveListTableViewCell.swift; sourceTree = "<group>"; };
 		1D9B95F2246C82EC0074087E /* AnchorFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorFunction.swift; sourceTree = "<group>"; };
-		1D9B95F4246C847E0074087E /* LoveListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveListTableViewController.swift; sourceTree = "<group>"; };
 		1D9B95F6246D7FA60074087E /* ContainedTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainedTable.swift; sourceTree = "<group>"; };
+		1D9E563F249C1F7100657E26 /* LoveListTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveListTableTableViewController.swift; sourceTree = "<group>"; };
 		1DA5682F24536889008E2D41 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1DA81AFF2489A5F000A048A6 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		1DA81B03248B1F5A00A048A6 /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
@@ -87,8 +89,8 @@
 		1DAB15112454EB9900F7C156 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1DAB9D6F24567BDD00C1F06B /* LoveQuick_UIKit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LoveQuick_UIKit.entitlements; sourceTree = "<group>"; };
 		1DAB9D7024567BE400C1F06B /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
+		1DCA08472491BC36003B5682 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		1DEE32AF244BBAE700105930 /* RandomNiceties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNiceties.swift; sourceTree = "<group>"; };
-		1DF3AB2A2472E6AB008EBCDE /* SideMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewController.swift; sourceTree = "<group>"; };
 		1DF3AB2D247318F6008EBCDE /* ConvenienceFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvenienceFunctions.swift; sourceTree = "<group>"; };
 		513D1CE3B9E1B0FC572510CD /* Pods-LoveQuick_UIKit-LoveQuick_UIKitUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoveQuick_UIKit-LoveQuick_UIKitUITests.debug.xcconfig"; path = "Target Support Files/Pods-LoveQuick_UIKit-LoveQuick_UIKitUITests/Pods-LoveQuick_UIKit-LoveQuick_UIKitUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7503EB4ADE2A6A033152A118 /* Pods-LoveQuick_UIKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoveQuick_UIKitTests.release.xcconfig"; path = "Target Support Files/Pods-LoveQuick_UIKitTests/Pods-LoveQuick_UIKitTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -155,9 +157,10 @@
 				1D1F909F244F93FA00B03B34 /* LoginViewController.swift */,
 				1DA853E2244931BB002AA7A3 /* ViewController.swift */,
 				1D41DD532450C622000E91F3 /* SignUpViewController.swift */,
-				1D9B95F4246C847E0074087E /* LoveListTableViewController.swift */,
-				1DF3AB2A2472E6AB008EBCDE /* SideMenuTableViewController.swift */,
 				1DA81AFF2489A5F000A048A6 /* LoadingViewController.swift */,
+				1DCA08472491BC36003B5682 /* MenuViewController.swift */,
+				1D63843A2495BF2100FD8272 /* LoveListViewController.swift */,
+				1D9E563F249C1F7100657E26 /* LoveListTableTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -513,16 +516,17 @@
 				1DA853E3244931BB002AA7A3 /* ViewController.swift in Sources */,
 				1DA85413244A0D00002AA7A3 /* Heart.swift in Sources */,
 				1D9B95F1246C7F4F0074087E /* LoveListTableViewCell.swift in Sources */,
-				1DF3AB2B2472E6AB008EBCDE /* SideMenuTableViewController.swift in Sources */,
 				1DA81B04248B1F5A00A048A6 /* Globals.swift in Sources */,
 				1D8E01A6249052A800F4A66A /* RandomUserProfile.swift in Sources */,
 				1DA5683024536889008E2D41 /* User.swift in Sources */,
 				1D9B95F3246C82EC0074087E /* AnchorFunction.swift in Sources */,
 				1D41DD582450F6AF000E91F3 /* LoginButtons.swift in Sources */,
 				1DA853E1244931BB002AA7A3 /* SceneDelegate.swift in Sources */,
+				1DCA08482491BC36003B5682 /* MenuViewController.swift in Sources */,
+				1D9E5640249C1F7100657E26 /* LoveListTableTableViewController.swift in Sources */,
 				1DF3AB2E247318F6008EBCDE /* ConvenienceFunctions.swift in Sources */,
 				1DEE32B0244BBAE700105930 /* RandomNiceties.swift in Sources */,
-				1D9B95F5246C847E0074087E /* LoveListTableViewController.swift in Sources */,
+				1D63843B2495BF2100FD8272 /* LoveListViewController.swift in Sources */,
 				1D9B95F7246D7FA60074087E /* ContainedTable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

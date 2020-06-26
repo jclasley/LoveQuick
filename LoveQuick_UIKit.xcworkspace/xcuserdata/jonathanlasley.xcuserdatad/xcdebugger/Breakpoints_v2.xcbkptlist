@@ -27,8 +27,8 @@
             filePath = "LoveQuick_UIKit/View Controllers/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "handlePanRecognizer(recognizer:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -43,9 +43,9 @@
             filePath = "LoveQuick_UIKit/Models/User.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
-            landmarkName = "asyncPopulateLoveListWithUIDs()"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "asyncPopulateLoveListWithUIDs(completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -78,6 +78,38 @@
             startingLineNumber = "41"
             endingLineNumber = "41"
             landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6E8844A0-6859-40BC-9418-2A58C38AC258"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LoveQuick_UIKit/View Controllers/MenuViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "textFieldDidEndEditing(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ABB7EC22-34BF-45EC-9446-578AF6FC16A0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LoveQuick_UIKit/View Controllers/MenuViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "signOut(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
