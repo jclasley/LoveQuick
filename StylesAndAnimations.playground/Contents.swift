@@ -3,47 +3,37 @@
 import UIKit
 import PlaygroundSupport
 
-class MyViewController : UIViewController {
-    override func loadView() {
-        let view = UIView()
-        view.backgroundColor = .white
-		
-		let button = ThreeBarButton(x: 50, y: 50, height: 20)
-		button.backgroundColor = .white
-		view.addSubview(button)
-		self.view = view
-    }
+//let shadow: NSShadow = {
+//	let s = NSShadow()
+//	s.shadowColor = UIColor.black
+//	s.shadowBlurRadius = 4.0
+//	return s
+//}()
+//let attributes: [NSAttributedString.Key : Any] = [
+//	.shadow: shadow,
+//	.foregroundColor: #colorLiteral(red: 1, green: 0.8822258415, blue: 0.4357810227, alpha: 1),
+//	.font: UIFont(name: "Noteworthy", size: 60)!
+//]
+//
+//let title = NSMutableAttributedString(string: "Hi, Jon", attributes: attributes)
+
+func createLoveLetters() -> String {
+	let letters = "ABCDEFGHIJKILMNOPQRSTUVWXYZ"
+	var l = String((0..<5).map({ _ in letters.randomElement()! }))
+	return l
 }
 
-class ThreeBarButton : UIButton {
-	
-	init(x: CGFloat, y: CGFloat, height: CGFloat) {
-		super.init(frame: CGRect(x: x, y: y, width: height*1.5, height: height))
-	}
-	
-	required init?(coder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
-	}
-	
-	override func draw(_ rect: CGRect) {
-		let lines: [UIBezierPath] = {
-			var paths = [UIBezierPath]()
-			for offset in 0...4 {
-				let partialRect = CGRect(x: rect.origin.x, y: rect.origin.y + CGFloat(offset*Int(rect.height)/5), width: rect.width, height: rect.height/5)
-				let line = CGPath(rect: partialRect, transform: nil)
-				let bezierLine = UIBezierPath(cgPath: line)
-				paths.append(bezierLine)
-			}
-			return paths
-		}()
-		for i in 0..<lines.count {
-			if i % 2 == 0 {
-				lines[i].fill()
-			}
-		}
-	}
-	
-}
+
+let label: UILabel = {
+	let l = UILabel()
+	l.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: 300, height: 200))
+	l.text = createLoveLetters()
+	l.textAlignment = .center
+	l.baselineAdjustment = .alignCenters
+	l.backgroundColor = #colorLiteral(red: 0.6916132569, green: 0.5701339841, blue: 0.929064393, alpha: 1)
+	return l
+}()
+
+PlaygroundPage.current.liveView = label
 
 // Present the view controller in the Live View window
-PlaygroundPage.current.liveView = MyViewController()
