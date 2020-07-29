@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D1203AD24BB6B6900AEF3C5 /* LastSignupIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1203AC24BB6B6900AEF3C5 /* LastSignupIntroViewController.swift */; };
 		1D1F90A0244F93FA00B03B34 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1F909F244F93FA00B03B34 /* LoginViewController.swift */; };
+		1D355A8524C215A0006A9A5E /* AddToLoveListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D355A8424C215A0006A9A5E /* AddToLoveListViewController.swift */; };
 		1D41DD542450C622000E91F3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D41DD532450C622000E91F3 /* SignUpViewController.swift */; };
 		1D41DD582450F6AF000E91F3 /* LoginButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D41DD572450F6AF000E91F3 /* LoginButtons.swift */; };
+		1D4478A224AFD0110042BC39 /* FirstTimeNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4478A124AFD0110042BC39 /* FirstTimeNicknameViewController.swift */; };
 		1D63843B2495BF2100FD8272 /* LoveListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D63843A2495BF2100FD8272 /* LoveListViewController.swift */; };
 		1D87EC23245F5BAB00043947 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D87EC22245F5BAB00043947 /* AppDelegate.swift */; };
 		1D8E01A6249052A800F4A66A /* RandomUserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8E01A5249052A800F4A66A /* RandomUserProfile.swift */; };
@@ -58,10 +61,13 @@
 /* Begin PBXFileReference section */
 		143131E6E54CCBBE366BCBA5 /* Pods_LoveQuick_UIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoveQuick_UIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1970A5F4D449F7CF6370E25B /* Pods-LoveQuick_UIKit-LoveQuick_UIKitUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoveQuick_UIKit-LoveQuick_UIKitUITests.release.xcconfig"; path = "Target Support Files/Pods-LoveQuick_UIKit-LoveQuick_UIKitUITests/Pods-LoveQuick_UIKit-LoveQuick_UIKitUITests.release.xcconfig"; sourceTree = "<group>"; };
+		1D1203AC24BB6B6900AEF3C5 /* LastSignupIntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastSignupIntroViewController.swift; sourceTree = "<group>"; };
 		1D1F909F244F93FA00B03B34 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1D355A8424C215A0006A9A5E /* AddToLoveListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToLoveListViewController.swift; sourceTree = "<group>"; };
 		1D41DD532450C622000E91F3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		1D41DD552450EAA0000E91F3 /* COLORS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = COLORS.md; sourceTree = "<group>"; };
 		1D41DD572450F6AF000E91F3 /* LoginButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButtons.swift; sourceTree = "<group>"; };
+		1D4478A124AFD0110042BC39 /* FirstTimeNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTimeNicknameViewController.swift; sourceTree = "<group>"; };
 		1D63843A2495BF2100FD8272 /* LoveListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveListViewController.swift; sourceTree = "<group>"; };
 		1D87EC22245F5BAB00043947 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D8E01A5249052A800F4A66A /* RandomUserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserProfile.swift; sourceTree = "<group>"; };
@@ -161,6 +167,9 @@
 				1DCA08472491BC36003B5682 /* MenuViewController.swift */,
 				1D63843A2495BF2100FD8272 /* LoveListViewController.swift */,
 				1D9E563F249C1F7100657E26 /* LoveListTableTableViewController.swift */,
+				1D4478A124AFD0110042BC39 /* FirstTimeNicknameViewController.swift */,
+				1D1203AC24BB6B6900AEF3C5 /* LastSignupIntroViewController.swift */,
+				1D355A8424C215A0006A9A5E /* AddToLoveListViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -509,13 +518,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D4478A224AFD0110042BC39 /* FirstTimeNicknameViewController.swift in Sources */,
 				1D87EC23245F5BAB00043947 /* AppDelegate.swift in Sources */,
 				1D1F90A0244F93FA00B03B34 /* LoginViewController.swift in Sources */,
 				1DA81B002489A5F000A048A6 /* LoadingViewController.swift in Sources */,
 				1D41DD542450C622000E91F3 /* SignUpViewController.swift in Sources */,
 				1DA853E3244931BB002AA7A3 /* ViewController.swift in Sources */,
 				1DA85413244A0D00002AA7A3 /* Heart.swift in Sources */,
+				1D1203AD24BB6B6900AEF3C5 /* LastSignupIntroViewController.swift in Sources */,
 				1D9B95F1246C7F4F0074087E /* LoveListTableViewCell.swift in Sources */,
+				1D355A8524C215A0006A9A5E /* AddToLoveListViewController.swift in Sources */,
 				1DA81B04248B1F5A00A048A6 /* Globals.swift in Sources */,
 				1D8E01A6249052A800F4A66A /* RandomUserProfile.swift in Sources */,
 				1DA5683024536889008E2D41 /* User.swift in Sources */,
