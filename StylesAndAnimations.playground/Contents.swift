@@ -19,21 +19,19 @@ import PlaygroundSupport
 
 func createLoveLetters() -> String {
 	let letters = "ABCDEFGHIJKILMNOPQRSTUVWXYZ"
-	var l = String((0..<5).map({ _ in letters.randomElement()! }))
+	let l = String((0..<5).map({ _ in letters.randomElement()! }))
 	return l
 }
 
+func deg2rad(_ number: CGFloat) -> CGFloat {
+    return number * .pi / 180
+}
 
-let label: UILabel = {
-	let l = UILabel()
-	l.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: 300, height: 200))
-	l.text = createLoveLetters()
-	l.textAlignment = .center
-	l.baselineAdjustment = .alignCenters
-	l.backgroundColor = #colorLiteral(red: 0.6916132569, green: 0.5701339841, blue: 0.929064393, alpha: 1)
-	return l
-}()
+let view = UIView()
+view.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+view.backgroundColor = UIColor.blue
+view.transform = CGAffineTransform(rotationAngle: deg2rad(-10))
 
-PlaygroundPage.current.liveView = label
+PlaygroundPage.current.liveView = view
 
 // Present the view controller in the Live View window

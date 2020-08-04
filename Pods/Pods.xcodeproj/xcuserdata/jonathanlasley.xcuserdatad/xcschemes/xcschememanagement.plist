@@ -158,12 +158,22 @@
 			<key>orderHint</key>
 			<integer>27</integer>
 		</dict>
+		<key>RxBlocking.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>29</integer>
+		</dict>
 		<key>RxCocoa.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>28</integer>
+		</dict>
+		<key>RxCocoa.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>27</integer>
 		</dict>
 		<key>RxRelay.xcscheme</key>
 		<dict>
@@ -172,10 +182,20 @@
 			<key>orderHint</key>
 			<integer>29</integer>
 		</dict>
+		<key>RxRelay.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>28</integer>
+		</dict>
 		<key>RxSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>30</integer>
+		</dict>
+		<key>RxSwift.xcscheme_^#shared#^_</key>
+		<dict>
 			<key>orderHint</key>
 			<integer>30</integer>
 		</dict>
@@ -185,6 +205,11 @@
 			<false/>
 			<key>orderHint</key>
 			<integer>31</integer>
+		</dict>
+		<key>RxTest.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>26</integer>
 		</dict>
 		<key>SideMenu.xcscheme</key>
 		<dict>
