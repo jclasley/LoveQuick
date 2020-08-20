@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D00A1D924D8DA81009CDCFF /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D00A1D824D8DA81009CDCFF /* Animations.swift */; };
 		1D1203AD24BB6B6900AEF3C5 /* LastSignupIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1203AC24BB6B6900AEF3C5 /* LastSignupIntroViewController.swift */; };
 		1D1F90A0244F93FA00B03B34 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1F909F244F93FA00B03B34 /* LoginViewController.swift */; };
+		1D2EACD324E6012F000AFD6D /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2EACD224E6012F000AFD6D /* Animations.swift */; };
 		1D355A8524C215A0006A9A5E /* AddToLoveListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D355A8424C215A0006A9A5E /* AddToLoveListViewController.swift */; };
 		1D41DD542450C622000E91F3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D41DD532450C622000E91F3 /* SignUpViewController.swift */; };
 		1D41DD582450F6AF000E91F3 /* LoginButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D41DD572450F6AF000E91F3 /* LoginButtons.swift */; };
@@ -62,9 +62,9 @@
 /* Begin PBXFileReference section */
 		143131E6E54CCBBE366BCBA5 /* Pods_LoveQuick_UIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoveQuick_UIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1970A5F4D449F7CF6370E25B /* Pods-LoveQuick_UIKit-LoveQuick_UIKitUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoveQuick_UIKit-LoveQuick_UIKitUITests.release.xcconfig"; path = "Target Support Files/Pods-LoveQuick_UIKit-LoveQuick_UIKitUITests/Pods-LoveQuick_UIKit-LoveQuick_UIKitUITests.release.xcconfig"; sourceTree = "<group>"; };
-		1D00A1D824D8DA81009CDCFF /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 		1D1203AC24BB6B6900AEF3C5 /* LastSignupIntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastSignupIntroViewController.swift; sourceTree = "<group>"; };
 		1D1F909F244F93FA00B03B34 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1D2EACD224E6012F000AFD6D /* Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 		1D355A8424C215A0006A9A5E /* AddToLoveListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToLoveListViewController.swift; sourceTree = "<group>"; };
 		1D41DD532450C622000E91F3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		1D41DD552450EAA0000E91F3 /* COLORS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = COLORS.md; sourceTree = "<group>"; };
@@ -205,6 +205,7 @@
 				1D3B07DF246B3C9800AABA2E /* Views */,
 				1D41DD562450F68D000E91F3 /* Models */,
 				1D9928362450BF3000E9F4C0 /* View Controllers */,
+				1D2EACD224E6012F000AFD6D /* Animations.swift */,
 				1D87EC22245F5BAB00043947 /* AppDelegate.swift */,
 				1DA853E0244931BB002AA7A3 /* SceneDelegate.swift */,
 				1DA853E4244931BB002AA7A3 /* Main.storyboard */,
@@ -216,7 +217,6 @@
 				1D9B95F2246C82EC0074087E /* AnchorFunction.swift */,
 				1DF3AB2D247318F6008EBCDE /* ConvenienceFunctions.swift */,
 				1DA81B03248B1F5A00A048A6 /* Globals.swift */,
-				1D00A1D824D8DA81009CDCFF /* Animations.swift */,
 			);
 			path = LoveQuick_UIKit;
 			sourceTree = "<group>";
@@ -543,7 +543,7 @@
 				1DEE32B0244BBAE700105930 /* RandomNiceties.swift in Sources */,
 				1D63843B2495BF2100FD8272 /* LoveListViewController.swift in Sources */,
 				1D9B95F7246D7FA60074087E /* ContainedTable.swift in Sources */,
-				1D00A1D924D8DA81009CDCFF /* Animations.swift in Sources */,
+				1D2EACD324E6012F000AFD6D /* Animations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
