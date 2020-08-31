@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "C8B4FC8D-6CDB-48D9-8B1A-D1A1E79F568C"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         <BreakpointContent
+            uuid = "71E3825D-562D-405D-889B-D996B5598BC1"
+            shouldBeEnabled = "Yes"
+            condition = "-[NSObject(NSObject) doesNotRecognizeSelector:]"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            breakpointStackSelectionBehavior = "1"
+            scope = "1"
+            stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "830F39AE-9843-4B1A-914C-CF96BB19F414"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LoveQuick_UIKit/ConvenienceFunctions.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "generateLoveLetters()"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "830F39AE-9843-4B1A-914C-CF96BB19F414 - 8afc1dca361041bf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LoveQuick_UIKit.generateLoveLetters() -&gt; Swift.String"
+                  moduleName = "LoveQuick_UIKit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jonathanlasley/Coding/swift/LoveQuick_UIKit/LoveQuick_UIKit/ConvenienceFunctions.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "122">
+               </Location>
+               <Location
+                  uuid = "830F39AE-9843-4B1A-914C-CF96BB19F414 - 1e49ca33a91ba901"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Int) -&gt; Swift.Character in LoveQuick_UIKit.generateLoveLetters() -&gt; Swift.String"
+                  moduleName = "LoveQuick_UIKit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jonathanlasley/Coding/swift/LoveQuick_UIKit/LoveQuick_UIKit/ConvenienceFunctions.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "61">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.SymbolicBreakpoint">
+         <BreakpointContent
+            uuid = "C017AC0A-303F-4B14-A87D-46DCA2500820"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            symbolName = "UITableViewAlertForLayoutOutsideViewHierarchy"
+            moduleName = "">
+            <Locations>
+               <Location
+                  uuid = "C017AC0A-303F-4B14-A87D-46DCA2500820 - 620169ab4c7c265a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UITableViewAlertForLayoutOutsideViewHierarchy"
+                  moduleName = "UIKitCore"
+                  usesParentBreakpointCondition = "Yes"
+                  offsetFromSymbolStart = "0">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

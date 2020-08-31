@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZLD-rN-mUL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoveQuick" translatesAutoresizingMaskIntoConstraints="NO" id="bco-dT-bOV">
+                                <rect key="frame" x="0.0" y="368" width="414" height="85"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.69019607839999997" green="0.56862745100000001" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="8HL-LO-NT1" firstAttribute="trailing" secondItem="bco-dT-bOV" secondAttribute="trailing" id="8ou-g6-M3h"/>
+                            <constraint firstItem="bco-dT-bOV" firstAttribute="leading" secondItem="8HL-LO-NT1" secondAttribute="leading" id="ho9-iY-Xbd"/>
+                            <constraint firstItem="bco-dT-bOV" firstAttribute="baseline" secondItem="8HL-LO-NT1" secondAttribute="centerY" id="yXy-OV-qvt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8HL-LO-NT1"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="LoveQuick" width="337" height="85"/>
+    </resources>
+</document>
