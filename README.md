@@ -5,6 +5,7 @@
 - [How it works](#how-it-works)  
 - [Why it's different](#why-its-different)  
 - [Features to come](#features-to-come)
+- [Screenshots](#screenshots)
 
 ### About
 
@@ -37,17 +38,8 @@ LoveQuick was designed specifically to be unintrusive. I didn't want this to bec
 - [ ] More hearts -- these are drawn by my girlfriend, so let me know if you have any requests!
 - [ ] User suggestions -- please feel free to email me any suggestions or ideas for implementation that you may have
 
-#### Log in  
-<img src="https://user-images.githubusercontent.com/60758557/91782528-5d094b00-ebcb-11ea-9111-366e2e8a19da.png" width="20%">
+### Screenshots
 
-
-#### Main screen  
-<img src="https://user-images.githubusercontent.com/60758557/91782531-5d094b00-ebcb-11ea-8cd3-0414ce4dc946.png" width="20%">
-
-
-#### LoveList  
-<img src="https://user-images.githubusercontent.com/60758557/91782532-5e3a7800-ebcb-11ea-9229-3e02079caa86.png" width="20%">
-
-
-#### Add user  
-<img src="https://user-images.githubusercontent.com/60758557/91782533-5e3a7800-ebcb-11ea-9178-9f62aba3dafa.png" width="20%">
+| Log in | Main screen | LoveList | Add user |
+| :-- | :-- | :-- | :-- |
+| <img src="https://user-images.githubusercontent.com/60758557/91782528-5d094b00-ebcb-11ea-9111-366e2e8a19da.png"> | <img src="https://user-images.githubusercontent.com/60758557/91782531-5d094b00-ebcb-11ea-8cd3-0414ce4dc946.png"> | <img src="https://user-images.githubusercontent.com/60758557/91782532-5e3a7800-ebcb-11ea-9229-3e02079caa86.png"> | <img src="https://user-images.githubusercontent.com/60758557/91782533-5e3a7800-ebcb-11ea-9178-9f62aba3dafa.png"> |
