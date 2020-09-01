@@ -31,6 +31,8 @@ LoveQuick was designed specifically to be unintrusive. I didn't want this to bec
 <dd>You can only send out a notification once an hour. The notification will go to everyone on your list, but you have to wait an hour to do it again. This is to keep it from being a game of tag.</dd>  
 <dt>Receiving</dt>
 <dd>Your notifications are queued such that you will only receive push notifications hourly, at maximum. Not a notification every single time you are on a user's list who sends love. The notifications are grouped and then pushed on a schedule. You can review your notifications at any time by opening the app, which is the only way to receive real-time info.</dd>
+  <dt>No messages</dt>
+  <dd>I'm not going to add the capability to include "a fun little message with it". I feel this runs counter to the original intent and soul of the app. The whole point is that it's a discrete, bundled delivery that requires no direct communication.</dd>
 </dl>
 
 ### Features to come
