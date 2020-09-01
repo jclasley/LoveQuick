@@ -1,21 +1,20 @@
 # LoveQuick
 
 ##### Contents
-- [About](#about)  
+ - [About](#about)  
 - [How it works](#how-it-works)  
 - [Why it's different](#why-its-different)  
 - [Features to come](#features-to-come)
 - [Screenshots](#screenshots)
 
-### About
-
+## About
 I'm the worst at keeping in touch with friends and family. I wish I could be better and have long, extended conversations with those that I care about dearly, but life and its numerous distractions get in the way.
 
 I wished that I had a way to quickly drop a line to my parents, my siblings, and my college roomates to simply say "Hey, just thinking about you, hope you're doing alright." Sure, I could type out that text, but before you know it, we're exchanging texts and then I forget to reply and now I feel bad because I forgot to reply and you feel bad because I forgot to reply and nobody's happy.
 
 Enter LoveQuick.
 
-### How it works
+## How it works
 
 After you sign up, you'll be given random LoveLetters, which you can see in your profile. This set of five characters will be how your friends and loved ones add you to their LoveList.
 
@@ -23,7 +22,7 @@ The first time you run the app, you'll be given a quick tour that culminates in 
 
 Once you have some users in your LoveList, all you have to do is tap the heart! You'll be given a confirmation that your love has been sent, and any user on your LoveList will receive a notification that you're thinking about them. It's as simple as that.
 
-### Why it's different
+## Why it's different
 
 LoveQuick was designed specifically to be unintrusive. I didn't want this to become just another way that I fail to stay in touch with people. All it is and all it will ever be is a quick, easy, minimally invasive way to send a virtual thought. To keep it this way, there are restrictions on how often you can send and receive.  
 <dl>
@@ -35,12 +34,12 @@ LoveQuick was designed specifically to be unintrusive. I didn't want this to bec
   <dd>I'm not going to add the capability to include "a fun little message with it". I feel this runs counter to the original intent and soul of the app. The whole point is that it's a discrete, bundled delivery that requires no direct communication.</dd>
 </dl>
 
-### Features to come
+## Features to come
 - [ ] More animations for when you tap
 - [ ] More hearts -- these are drawn by my girlfriend, so let me know if you have any requests!
 - [ ] User suggestions -- please feel free to email me any suggestions or ideas for implementation that you may have
 
-### Screenshots
+## Screenshots
 
 | Log in | Main screen | LoveList | Add user |
 | :-- | :-- | :-- | :-- |
