@@ -41,6 +41,13 @@ class ViewController: UIViewController {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
 		
+		//MARK: Permissions
+		UNUserNotificationCenter.current().requestAuthorization(options: [.alert], completionHandler: { auth, error in
+			if auth {
+				print("Y")
+			}
+		})
+		
 		//MARK: Auth redirect
 		//redirect
 		if (Globals.user == nil) {
@@ -99,6 +106,7 @@ class ViewController: UIViewController {
 					print(e)
 				}
 			})
+			
 		}
 	}
 	

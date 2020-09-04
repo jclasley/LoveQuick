@@ -80,24 +80,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 		}
 		return true
 	}
-
-	//zoom in on field
-//
-//	func textFieldDidBeginEditing(_ textField: UITextField) {
-//		view.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
-//		if textField.tag > 1 {
-//			let totalTagHeight = textField.frame.height * CGFloat((textField.tag - 1))
-//			view.frame.origin.y -= totalTagHeight
-//		}
-//	}
-//
-//	func textFieldDidEndEditing(_ textField: UITextField) {
-//		view.transform = CGAffineTransform(scaleX: 1, y: 1)
-//		if textField.tag > 1 {
-//			let totalTagHeight = textField.frame.height * CGFloat((textField.tag - 1))
-//			view.frame.origin.y += totalTagHeight
-//		}
-//	}
 	
 	@IBAction func returnView(_ sender: Any) {
 		view.endEditing(true)

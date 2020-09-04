@@ -16,10 +16,8 @@
 		1D4478A224AFD0110042BC39 /* FirstTimeNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4478A124AFD0110042BC39 /* FirstTimeNicknameViewController.swift */; };
 		1D63843B2495BF2100FD8272 /* LoveListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D63843A2495BF2100FD8272 /* LoveListViewController.swift */; };
 		1D87EC23245F5BAB00043947 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D87EC22245F5BAB00043947 /* AppDelegate.swift */; };
-		1D8E01A6249052A800F4A66A /* RandomUserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8E01A5249052A800F4A66A /* RandomUserProfile.swift */; };
 		1D9B95F1246C7F4F0074087E /* LoveListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B95F0246C7F4F0074087E /* LoveListTableViewCell.swift */; };
 		1D9B95F3246C82EC0074087E /* AnchorFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B95F2246C82EC0074087E /* AnchorFunction.swift */; };
-		1D9B95F7246D7FA60074087E /* ContainedTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B95F6246D7FA60074087E /* ContainedTable.swift */; };
 		1D9E5640249C1F7100657E26 /* LoveListTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9E563F249C1F7100657E26 /* LoveListTableTableViewController.swift */; };
 		1DA5683024536889008E2D41 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA5682F24536889008E2D41 /* User.swift */; };
 		1DA81B002489A5F000A048A6 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA81AFF2489A5F000A048A6 /* LoadingViewController.swift */; };
@@ -72,10 +70,8 @@
 		1D4478A124AFD0110042BC39 /* FirstTimeNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTimeNicknameViewController.swift; sourceTree = "<group>"; };
 		1D63843A2495BF2100FD8272 /* LoveListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveListViewController.swift; sourceTree = "<group>"; };
 		1D87EC22245F5BAB00043947 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1D8E01A5249052A800F4A66A /* RandomUserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserProfile.swift; sourceTree = "<group>"; };
 		1D9B95F0246C7F4F0074087E /* LoveListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveListTableViewCell.swift; sourceTree = "<group>"; };
 		1D9B95F2246C82EC0074087E /* AnchorFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorFunction.swift; sourceTree = "<group>"; };
-		1D9B95F6246D7FA60074087E /* ContainedTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainedTable.swift; sourceTree = "<group>"; };
 		1D9E563F249C1F7100657E26 /* LoveListTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveListTableTableViewController.swift; sourceTree = "<group>"; };
 		1DA5682F24536889008E2D41 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1DA81AFF2489A5F000A048A6 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
@@ -143,8 +139,6 @@
 			children = (
 				1D41DD572450F6AF000E91F3 /* LoginButtons.swift */,
 				1D9B95F0246C7F4F0074087E /* LoveListTableViewCell.swift */,
-				1D9B95F6246D7FA60074087E /* ContainedTable.swift */,
-				1D8E01A5249052A800F4A66A /* RandomUserProfile.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -205,7 +199,7 @@
 				1D3B07DF246B3C9800AABA2E /* Views */,
 				1D41DD562450F68D000E91F3 /* Models */,
 				1D9928362450BF3000E9F4C0 /* View Controllers */,
-				1D2EACD224E6012F000AFD6D /* Animations.swift */,
+				1DF16746250197F200675D09 /* Top-level convenience */,
 				1D87EC22245F5BAB00043947 /* AppDelegate.swift */,
 				1DA853E0244931BB002AA7A3 /* SceneDelegate.swift */,
 				1DA853E4244931BB002AA7A3 /* Main.storyboard */,
@@ -214,9 +208,6 @@
 				1DA853EC244931BD002AA7A3 /* Info.plist */,
 				1D41DD552450EAA0000E91F3 /* COLORS.md */,
 				1DAB15112454EB9900F7C156 /* GoogleService-Info.plist */,
-				1D9B95F2246C82EC0074087E /* AnchorFunction.swift */,
-				1DF3AB2D247318F6008EBCDE /* ConvenienceFunctions.swift */,
-				1DA81B03248B1F5A00A048A6 /* Globals.swift */,
 			);
 			path = LoveQuick_UIKit;
 			sourceTree = "<group>";
@@ -237,6 +228,17 @@
 				1DA85402244931BD002AA7A3 /* Info.plist */,
 			);
 			path = LoveQuick_UIKitUITests;
+			sourceTree = "<group>";
+		};
+		1DF16746250197F200675D09 /* Top-level convenience */ = {
+			isa = PBXGroup;
+			children = (
+				1D9B95F2246C82EC0074087E /* AnchorFunction.swift */,
+				1DF3AB2D247318F6008EBCDE /* ConvenienceFunctions.swift */,
+				1DA81B03248B1F5A00A048A6 /* Globals.swift */,
+				1D2EACD224E6012F000AFD6D /* Animations.swift */,
+			);
+			path = "Top-level convenience";
 			sourceTree = "<group>";
 		};
 		47D368BAB7F720FCE8F3B742 /* Pods */ = {
@@ -532,7 +534,6 @@
 				1D9B95F1246C7F4F0074087E /* LoveListTableViewCell.swift in Sources */,
 				1D355A8524C215A0006A9A5E /* AddToLoveListViewController.swift in Sources */,
 				1DA81B04248B1F5A00A048A6 /* Globals.swift in Sources */,
-				1D8E01A6249052A800F4A66A /* RandomUserProfile.swift in Sources */,
 				1DA5683024536889008E2D41 /* User.swift in Sources */,
 				1D9B95F3246C82EC0074087E /* AnchorFunction.swift in Sources */,
 				1D41DD582450F6AF000E91F3 /* LoginButtons.swift in Sources */,
@@ -542,7 +543,6 @@
 				1DF3AB2E247318F6008EBCDE /* ConvenienceFunctions.swift in Sources */,
 				1DEE32B0244BBAE700105930 /* RandomNiceties.swift in Sources */,
 				1D63843B2495BF2100FD8272 /* LoveListViewController.swift in Sources */,
-				1D9B95F7246D7FA60074087E /* ContainedTable.swift in Sources */,
 				1D2EACD324E6012F000AFD6D /* Animations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
