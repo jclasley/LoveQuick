@@ -64,6 +64,18 @@ private func loveLettersTaken(letters: String) -> Bool {
 	return takenOrError
 }
 
+func convertSecondsToFormattedTime(seconds time: Int) -> String {
+	let minutes = String(time / 60)
+	var seconds: String {
+		if time % 60 < 10 {
+			return "0\(time%60)"
+		} else {
+			return "\(time%60)"
+		}
+	}
+	return "\(minutes):\(seconds)"
+}
+
 extension UINavigationController {
 	func removeBorder() {
 		self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)

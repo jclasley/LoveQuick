@@ -186,33 +186,32 @@ struct CustomAnimations {
 	
 	static var initialHeartCoverHeight: CGFloat = 0
 	static func addTimer(over v: UIView) {
-		let timerLabel = UILabel()
-		timerLabel.frame = CGRect(x: 0, y: 0, width: 50, height: 25)
-		timerLabel.textAlignment = .center
-		timerLabel.backgroundColor = .clear
-		_ = CustomAnimations.timeText.bind(to: timerLabel.rx.text)
-		v.superview!.addSubview(timerLabel)
-		timerLabel.center = CGPoint(x: v.center.x, y: v.frame.minY)
+//		let timerLabel = UILabel()
+//		timerLabel.frame = CGRect(x: 0, y: 0, width: 50, height: 25)
+//		timerLabel.textAlignment = .center
+//		timerLabel.backgroundColor = .clear
+//		_ = CustomAnimations.timeText.bind(to: timerLabel.rx.text)
+//		v.superview!.addSubview(timerLabel)
+//		timerLabel.center = CGPoint(x: v.center.x, y: v.frame.minY)
 
-//		Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { timer in
-//			if totalTimePast < totalTime {
-//				// Reduce height of covering block
-//
-////				heartCover.transform = CGAffineTransform(scaleX: 1, y: 1)
-//				CustomAnimations.totalTimePast += 1
+		Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { timer in
+			if totalTimePast < totalTime {
+				// Reduce height of covering block
+
+//				heartCover.transform = CGAffineTransform(scaleX: 1, y: 1)
+				CustomAnimations.totalTimePast += 1
 //				let min = Int((CustomAnimations.totalTime - CustomAnimations.totalTimePast) / 60)
 //				let sec = (CustomAnimations.totalTime - CustomAnimations.totalTimePast) % 60
 //				CustomAnimations.timeText.onNext("\(min >= 10 ? min.description : "0" + min.description):\(sec >= 10 ? sec.description : "0" + sec.description)")
-//				heartCover.frame.size.height = initialHeartCoverHeight - (CGFloat(initialHeartCoverHeight/CGFloat(CustomAnimations.totalTime))*CGFloat(CustomAnimations.totalTimePast))
-//			}
-//			else {
-//				Globals.user!.isAbleToSendLove = true
-//				heartCover.removeFromSuperview()
-//				timerLabel.removeFromSuperview()
-//				resetTotalTime()
-//				timer.invalidate()
-//			}
-//		})
+				heartCover.frame.size.height = initialHeartCoverHeight - (CGFloat(initialHeartCoverHeight/CGFloat(CustomAnimations.totalTime))*CGFloat(CustomAnimations.totalTimePast))
+			}
+			else {
+				Globals.user!.isAbleToSendLove = true
+				heartCover.removeFromSuperview()
+				resetTotalTime()
+				timer.invalidate()
+			}
+		})
 		
 		
 	}

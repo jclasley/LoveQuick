@@ -31,38 +31,6 @@
             endingLineNumber = "42"
             landmarkName = "generateLoveLetters()"
             landmarkType = "9">
-            <Locations>
-               <Location
-                  uuid = "830F39AE-9843-4B1A-914C-CF96BB19F414 - 8afc1dca361041bf"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "LoveQuick_UIKit.generateLoveLetters() -&gt; Swift.String"
-                  moduleName = "LoveQuick_UIKit"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jonathanlasley/Coding/swift/LoveQuick_UIKit/LoveQuick_UIKit/ConvenienceFunctions.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "122">
-               </Location>
-               <Location
-                  uuid = "830F39AE-9843-4B1A-914C-CF96BB19F414 - 1e49ca33a91ba901"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Int) -&gt; Swift.Character in LoveQuick_UIKit.generateLoveLetters() -&gt; Swift.String"
-                  moduleName = "LoveQuick_UIKit"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jonathanlasley/Coding/swift/LoveQuick_UIKit/LoveQuick_UIKit/ConvenienceFunctions.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "61">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

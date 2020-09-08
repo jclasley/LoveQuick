@@ -30,9 +30,11 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DrawnHeart" translatesAutoresizingMaskIntoConstraints="NO" id="jud-Vx-or6">
-                                <rect key="frame" x="34" y="275" width="345" height="345"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DrawnHeart" translatesAutoresizingMaskIntoConstraints="NO" id="jud-Vx-or6">
+                                <rect key="frame" x="34" y="280" width="346" height="346"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="jud-Vx-or6" secondAttribute="height" multiplier="1:1" id="9VN-UE-bwR"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;nicety&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lab-O3-2q1">
                                 <rect key="frame" x="16" y="778.66666666666663" width="382" height="20.333333333333371"/>
@@ -42,6 +44,9 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qW2-gQ-Gp1">
                                 <rect key="frame" x="137" y="118.00000000000001" width="140.33333333333337" height="57.666666666666671"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57.666666666666671" id="gVn-Ca-37Q"/>
+                                </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="&lt;greeting&gt;">
                                         <attributes>
@@ -80,27 +85,39 @@
                                     <action selector="animationOne:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y5E-Qh-ZxS"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;time out&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bda-n2-eiM">
+                                <rect key="frame" x="165" y="247" width="84" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.69019607839999997" green="0.56862745100000001" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="iKG-mv-Cp8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cRa-Te-h4p" secondAttribute="trailing" constant="8" symbolic="YES" id="0v0-18-3qz"/>
+                            <constraint firstItem="jud-Vx-or6" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="1eZ-ad-NZ3"/>
+                            <constraint firstItem="jud-Vx-or6" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="36H-R6-B5i"/>
                             <constraint firstItem="Qc5-vp-E2B" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="4CB-k6-XNh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cRa-Te-h4p" secondAttribute="bottom" constant="145" id="4S6-Rk-VCt"/>
                             <constraint firstItem="Qc5-vp-E2B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="4eq-wg-byM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iKG-mv-Cp8" secondAttribute="trailing" constant="35" id="GmE-WM-ERe"/>
                             <constraint firstItem="qW2-gQ-Gp1" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Hoo-NH-y6w"/>
+                            <constraint firstItem="jud-Vx-or6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="34" id="KCh-l3-tCF"/>
                             <constraint firstItem="Lab-O3-2q1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Mlk-fc-uRl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Lab-O3-2q1" secondAttribute="bottom" constant="63" id="OQl-J3-Lmg"/>
                             <constraint firstItem="CXL-fx-br2" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="OSO-UT-wJk"/>
                             <constraint firstItem="qW2-gQ-Gp1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="74" id="PIZ-T4-5ji"/>
+                            <constraint firstItem="bda-n2-eiM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="T7P-Jo-0wM"/>
                             <constraint firstItem="tln-NG-gqO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="UCu-HE-t7x"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Lab-O3-2q1" secondAttribute="trailing" constant="16" id="XFh-KS-q9r"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iKG-mv-Cp8" secondAttribute="bottom" constant="145" id="d5C-tc-c1D"/>
                             <constraint firstItem="CXL-fx-br2" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="dh1-ED-exp"/>
+                            <constraint firstItem="jud-Vx-or6" firstAttribute="top" secondItem="bda-n2-eiM" secondAttribute="bottom" priority="999" constant="12" id="keM-W9-I9b"/>
                             <constraint firstItem="cRa-Te-h4p" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="34" id="mN7-cL-fDt"/>
                             <constraint firstItem="Lab-O3-2q1" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="sOz-WQ-ZCq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tln-NG-gqO" secondAttribute="trailing" constant="16" id="tN5-AB-iek"/>
+                            <constraint firstItem="bda-n2-eiM" firstAttribute="top" relation="greaterThanOrEqual" secondItem="qW2-gQ-Gp1" secondAttribute="bottom" constant="8" id="vVp-1V-iHk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <connections>
@@ -115,6 +132,7 @@
                         <outlet property="loveListButton" destination="tln-NG-gqO" id="BwM-Vw-gfB"/>
                         <outlet property="menuButton" destination="Qc5-vp-E2B" id="801-nX-OsF"/>
                         <outlet property="nicetyLabel" destination="Lab-O3-2q1" id="WTw-Hr-mtE"/>
+                        <outlet property="timerLabel" destination="bda-n2-eiM" id="Lpv-XN-1co"/>
                         <outlet property="transitionView" destination="CXL-fx-br2" id="Sg9-zQ-aRq"/>
                     </connections>
                 </viewController>

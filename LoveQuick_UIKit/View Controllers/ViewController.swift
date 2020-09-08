@@ -86,27 +86,47 @@ class ViewController: UIViewController {
 	}
 	//TODO: Add in drop down "sent" after hearts fall
 	
+	fileprivate func createNotification() {
+		// Create local notification
+		// 1. content
+		let sendAgainContent = UNMutableNotificationContent()
+		sendAgainContent.title = "Ready"
+		sendAgainContent.body = "Put on your tap shoes, cause you're free to love again!"
+		// 2. trigger
+		let sendAgainTrigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(CustomAnimations.totalTime), repeats: false)
+		// 3. request
+		let sendAgainRequest = UNNotificationRequest(identifier: "sendAgain", content: sendAgainContent, trigger: sendAgainTrigger)
+		UNUserNotificationCenter.current().add(sendAgainRequest, withCompletionHandler: { error in
+			if let e = error {
+				print(e)
+			}
+		})
+	}
+	
+	@IBOutlet weak var timerLabel: UILabel!
+	private func showTimerLabel() {
+		timerLabel.isHidden = false
+		let timer = Observable.interval(1, scheduler: MainScheduler.instance)
+			.map { CustomAnimations.totalTime - $0 }
+			.map { convertSecondsToFormattedTime(seconds: $0)}
+			.subscribe(onNext: { observer in
+				if observer == "0:00" {
+					self.timerLabel.isHidden = true
+				} else {
+					self.timerLabel.text = observer
+				}
+			})
+		
+	}
+	
 	@objc func doAnimation(recognizer: UITapGestureRecognizer) {
 		let tappedView = recognizer.view!
 		if Globals.user!.isAbleToSendLove {
 			CustomAnimations.fallingHeartsAnimation(view: tappedView)
 			Globals.user!.isAbleToSendLove = false
 			
-		// Create local notification
-			// 1. content
-			let sendAgainContent = UNMutableNotificationContent()
-			sendAgainContent.title = "Ready"
-			sendAgainContent.body = "Put on your tap shoes, cause you're free to love again!"
-			// 2. trigger
-			let sendAgainTrigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(CustomAnimations.totalTime), repeats: false)
-			// 3. request
-			let sendAgainRequest = UNNotificationRequest(identifier: "sendAgain", content: sendAgainContent, trigger: sendAgainTrigger)
-			UNUserNotificationCenter.current().add(sendAgainRequest, withCompletionHandler: { error in
-				if let e = error {
-					print(e)
-				}
-			})
-			
+			createNotification()
+			showTimerLabel()
 		}
 	}
 	
