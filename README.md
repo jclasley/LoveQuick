@@ -47,4 +47,4 @@ LoveQuick was designed specifically to be unintrusive. I didn't want this to bec
 
 | Profile | Sending love |
 | :-- | :-- |
-| Screenshot coming! | <img src="https://user-images.githubusercontent.com/60758557/92671654-d1876c80-f2e4-11ea-889b-84e30d4b6663.gif" width="203" height="439.56"> | 
+| <img src="https://user-images.githubusercontent.com/60758557/92672049-cb45c000-f2e5-11ea-9be4-9537589ac904.png" width="203" height="439.56"> | <img src="https://user-images.githubusercontent.com/60758557/92671654-d1876c80-f2e4-11ea-889b-84e30d4b6663.gif" width="203" height="439.56"> | 
