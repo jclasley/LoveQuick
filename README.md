@@ -22,6 +22,10 @@ The first time you run the app, you'll be given a quick tour that culminates in 
 
 Once you have some users in your LoveList, all you have to do is tap the heart! You'll be given a confirmation that your love has been sent, and any user on your LoveList will receive a notification that you're thinking about them. It's as simple as that.
 
+<p align="center">
+<img src="https://user-images.githubusercontent.com/60758557/92671654-d1876c80-f2e4-11ea-889b-84e30d4b6663.gif" width="25%">
+</p>
+
 ## Why it's different
 
 LoveQuick was designed specifically to be unintrusive. I didn't want this to become just another way that I fail to stay in touch with people. All it is and all it will ever be is a quick, easy, minimally invasive way to send a virtual thought. To keep it this way, there are restrictions on how often you can send and receive.  
@@ -41,10 +45,10 @@ LoveQuick was designed specifically to be unintrusive. I didn't want this to bec
 
 ## Screenshots
 
-| Log in | Main screen | Sending love |
+| Log in | Main screen | Recharging |
 | :-- | :-- | :-- |
-| <img src="https://user-images.githubusercontent.com/60758557/91782528-5d094b00-ebcb-11ea-9111-366e2e8a19da.png"> | <img src="https://user-images.githubusercontent.com/60758557/91782531-5d094b00-ebcb-11ea-8cd3-0414ce4dc946.png"> | <img src="https://user-images.githubusercontent.com/60758557/92671654-d1876c80-f2e4-11ea-889b-84e30d4b6663.gif"> | 
+| <img src="https://user-images.githubusercontent.com/60758557/91782528-5d094b00-ebcb-11ea-9111-366e2e8a19da.png"> | <img src="https://user-images.githubusercontent.com/60758557/91782531-5d094b00-ebcb-11ea-8cd3-0414ce4dc946.png"> | <img src="https://user-images.githubusercontent.com/60758557/92672423-a6058180-f2e6-11ea-8b8e-346392dc8ae7.png"> |
 
 | Profile | LoveList | Add user |
 | :-- | :-- | :-- |
-| <img src="https://user-images.githubusercontent.com/60758557/92672049-cb45c000-f2e5-11ea-9be4-9537589ac904.png" | <img src="https://user-images.githubusercontent.com/60758557/91782532-5e3a7800-ebcb-11ea-9229-3e02079caa86.png"> | <img src="https://user-images.githubusercontent.com/60758557/91782533-5e3a7800-ebcb-11ea-9178-9f62aba3dafa.png"> |
+| <img src="https://user-images.githubusercontent.com/60758557/92672049-cb45c000-f2e5-11ea-9be4-9537589ac904.png"> | <img src="https://user-images.githubusercontent.com/60758557/91782532-5e3a7800-ebcb-11ea-9229-3e02079caa86.png"> | <img src="https://user-images.githubusercontent.com/60758557/91782533-5e3a7800-ebcb-11ea-9178-9f62aba3dafa.png"> |
