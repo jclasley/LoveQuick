@@ -21,10 +21,13 @@ class ViewController: UIViewController {
 	@IBOutlet weak var nicetyLabel: UILabel!
 	@IBOutlet weak var heart: UIImageView!
 	
+	@IBOutlet weak var heartImage: UIImageView!
+	@IBOutlet weak var transitionView: UIView!
 	@IBOutlet weak var menuButton: UIButton!
 	@IBOutlet weak var loveListButton: UIButton!
 	@IBOutlet weak var greeting: UILabel!
 	let heartView = UIView()
+	let heartCover = UIView()
 	//auth vars
 	public var user: User?
 	var handle: AuthStateDidChangeListenerHandle?
@@ -34,9 +37,7 @@ class ViewController: UIViewController {
 	
 	//db
 	var dataFetched = false
-	
-	@IBOutlet weak var heartImage: UIImageView!
-	@IBOutlet weak var transitionView: UIView!
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
@@ -77,6 +78,7 @@ class ViewController: UIViewController {
 		//MARK: Hero
 		self.transitionView.heroModifiers = [.duration((1))]
 		self.transitionView.isHidden = true
+
 	}
 	
 	//MARK: animation
@@ -90,8 +92,8 @@ class ViewController: UIViewController {
 		// Create local notification
 		// 1. content
 		let sendAgainContent = UNMutableNotificationContent()
-		sendAgainContent.title = "Ready"
-		sendAgainContent.body = "Put on your tap shoes, cause you're free to love again!"
+		sendAgainContent.title = "Recharged!"
+		sendAgainContent.body = "Put on your tap shoes, cause you're free to tap that heart and spread the love again!"
 		// 2. trigger
 		let sendAgainTrigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(CustomAnimations.totalTime), repeats: false)
 		// 3. request
@@ -99,34 +101,67 @@ class ViewController: UIViewController {
 		UNUserNotificationCenter.current().add(sendAgainRequest, withCompletionHandler: { error in
 			if let e = error {
 				print(e)
+			} else {
+				self.triggerDate = sendAgainTrigger.nextTriggerDate()!
+				self.showTimerLabel()
 			}
 		})
 	}
 	
+	var triggerDate: Date!
 	@IBOutlet weak var timerLabel: UILabel!
 	private func showTimerLabel() {
 		timerLabel.isHidden = false
-		let timer = Observable.interval(1, scheduler: MainScheduler.instance)
-			.map { CustomAnimations.totalTime - $0 }
-			.map { convertSecondsToFormattedTime(seconds: $0)}
-			.subscribe(onNext: { observer in
-				if observer == "0:00" {
-					self.timerLabel.isHidden = true
-				} else {
-					self.timerLabel.text = observer
-				}
-			})
 		
+		let triggerSeconds = Calendar.current.dateComponents([.second], from: Date(), to: triggerDate).second
+		_ = Observable.interval(1, scheduler: MainScheduler.instance)
+			.map({ triggerSeconds! - $0 })
+			.takeWhile({$0>=0})
+			.subscribe(onNext: { timePassed in
+			
+			if timePassed == 0 { //timer ended
+				self.timerLabel.isHidden = true
+				self.timerLabel.text = "0:00"
+				Globals.user?.isAbleToSendLove = true
+				self.heartCover.removeFromSuperview()
+			} else { //timer going
+				self.timerLabel.text = convertSecondsToFormattedTime(seconds: timePassed)
+				self.reduceHeight(of: self.heartCover, by: CGFloat(triggerSeconds! - timePassed))
+			}
+		})
+	}
+	
+	var initialCoverHeight: CGFloat!
+	private func reduceHeight(of cover: UIView, by x: CGFloat) {
+		UIView.animate(withDuration: 1, delay: 0, options: .curveLinear, animations: {
+			cover.frame.size.height = self.initialCoverHeight - (CGFloat(self.initialCoverHeight/CGFloat(CustomAnimations.totalTime))*x)
+		})
+	}
+	
+	func addBlockOverHeart(_ heart: UIView) {
+		heartCover.frame = heart.frame
+		heartCover.backgroundColor = heart.superview!.backgroundColor
+		self.view.addSubview(heartCover)
+		NSLayoutConstraint.activate([
+			heartCover.topAnchor.constraint(equalTo: heart.topAnchor),
+			heartCover.leadingAnchor.constraint(equalTo: heart.leadingAnchor),
+			heartCover.trailingAnchor.constraint(equalTo: heart.trailingAnchor)
+		])
+		heartCover.setAnchorPoint(CGPoint(x:0.5,y:0))
+		initialCoverHeight = heartCover.frame.height
 	}
 	
 	@objc func doAnimation(recognizer: UITapGestureRecognizer) {
 		let tappedView = recognizer.view!
 		if Globals.user!.isAbleToSendLove {
-			CustomAnimations.fallingHeartsAnimation(view: tappedView)
-			Globals.user!.isAbleToSendLove = false
+			CustomAnimations.fallingHeartsAnimation(view: tappedView, completion: {
+				Globals.user!.isAbleToSendLove = false
+				
+				self.createNotification()
+				self.addBlockOverHeart(tappedView)
+				self.heartImage.isHidden = false
+			})
 			
-			createNotification()
-			showTimerLabel()
 		}
 	}
 	

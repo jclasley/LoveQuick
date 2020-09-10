@@ -73,7 +73,7 @@ struct CustomAnimations {
 		)
 	}
 	
-	static func fallingHeartsAnimation (view tappedView: UIView) {
+	static func fallingHeartsAnimation (view tappedView: UIView, completion: @escaping () -> () = { }) {
 		guard let superview = tappedView.superview else {
 			print("Failure. Tapped view \(tappedView)")
 			return
@@ -111,23 +111,11 @@ struct CustomAnimations {
 				tappedView.transform = CGAffineTransform(scaleX: 1, y: 1)
 				tappedView.center = superview.center
 				randomHearts.removeFromSuperview()
-				DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+				DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
 					l.removeFromSuperview()
-					emptyHeart.frame = tappedView.frame
-					emptyHeart.translatesAutoresizingMaskIntoConstraints = false
-					
-					addBlockOverHeart(tappedView)
-					tappedView.superview!.addSubview(emptyHeart)
-					NSLayoutConstraint.activate([
-						emptyHeart.topAnchor.constraint(equalTo: tappedView.topAnchor),
-						emptyHeart.leadingAnchor.constraint(equalTo: tappedView.leadingAnchor),
-						emptyHeart.centerXAnchor.constraint(equalTo: tappedView.centerXAnchor),
-						emptyHeart.bottomAnchor.constraint(equalTo: tappedView.bottomAnchor)
-					])
-					emptyHeart.contentMode = .scaleAspectFit
-					tappedView.isHidden = false
-					addTimer(over: tappedView)
+					completion()
 				})
+				
 			} )
 		
 	}
@@ -176,7 +164,6 @@ struct CustomAnimations {
 		heart.superview!.addSubview(heartCover)
 		NSLayoutConstraint.activate([
 			heartCover.topAnchor.constraint(equalTo: heart.topAnchor),
-			heartCover.bottomAnchor.constraint(equalTo: heart.bottomAnchor),
 			heartCover.leadingAnchor.constraint(equalTo: heart.leadingAnchor),
 			heartCover.trailingAnchor.constraint(equalTo: heart.trailingAnchor)
 		])
