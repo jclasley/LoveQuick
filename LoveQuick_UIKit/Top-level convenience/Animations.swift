@@ -94,7 +94,10 @@ struct CustomAnimations {
 					tappedView.center.y += tappedView.superview!.frame.height
 				})
 				UIView.addKeyframe(withRelativeStartTime: 0.3, relativeDuration: 0.7, animations: {
+					tappedView.alpha = 0 // hide during this so that it won't reappear
 					
+					
+					// label
 					l.text = "Love sent!"
 					l.font = UIFont(name: "Futura", size: 20)
 					l.frame = CGRect(origin: offscreenOrigin, size: CGSize(width: superview.frame.width, height: 50))
@@ -108,10 +111,12 @@ struct CustomAnimations {
 				})
 			}, completion: { _ in
 				tappedView.isHidden = true
-				tappedView.transform = CGAffineTransform(scaleX: 1, y: 1)
-				tappedView.center = superview.center
+				tappedView.alpha = 1 // reset
+				
 				randomHearts.removeFromSuperview()
 				DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+					tappedView.transform = CGAffineTransform(scaleX: 1, y: 1)
+					tappedView.center = superview.center
 					l.removeFromSuperview()
 					completion()
 				})

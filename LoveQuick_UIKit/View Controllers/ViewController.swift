@@ -10,6 +10,7 @@ import UIKit
 import FirebaseAuth
 import RxSwift
 import RxCocoa
+import FirebaseFirestore
 
 
 var user: User?
@@ -41,15 +42,17 @@ class ViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
-		
 		//MARK: Permissions
-		UNUserNotificationCenter.current().requestAuthorization(options: [.alert], completionHandler: { auth, error in
+		UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: { auth, error in
 			if auth {
 				print("Y")
+				DispatchQueue.main.async {
+					UIApplication.shared.registerForRemoteNotifications()
+				}
+				
 			}
 		})
 		
-		//MARK: Auth redirect
 		//redirect
 		if (Globals.user == nil) {
 			showLoginScreen()
@@ -111,7 +114,10 @@ class ViewController: UIViewController {
 	var triggerDate: Date!
 	@IBOutlet weak var timerLabel: UILabel!
 	private func showTimerLabel() {
-		timerLabel.isHidden = false
+		DispatchQueue.main.async {
+			self.timerLabel.text = ""
+			self.timerLabel.isHidden = false
+		}
 		
 		let triggerSeconds = Calendar.current.dateComponents([.second], from: Date(), to: triggerDate).second
 		_ = Observable.interval(1, scheduler: MainScheduler.instance)
@@ -241,6 +247,24 @@ class ViewController: UIViewController {
 		}
 	}
 	
+	//MARK: Notifications received
+	func showNotificationGeneral() {
+		let notificationReceivedLabel = UILabel()
+		notificationReceivedLabel.textAlignment = .center
+		notificationReceivedLabel.font = UIFont.init(name: "Noteworthy Light", size: 20)
+		notificationReceivedLabel.text = "Someone's thinking about you!"
+		
+		// frame
+		notificationReceivedLabel.translatesAutoresizingMaskIntoConstraints = false
+		notificationReceivedLabel.frame.size = CGSize(width: self.view.frame.width, height: 32)
+		view.addSubview(notificationReceivedLabel)
+		NSLayoutConstraint.activate([
+			notificationReceivedLabel.topAnchor.constraint(equalTo: heartImage.bottomAnchor, constant: 8),
+			notificationReceivedLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
+			notificationReceivedLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 8),
+			notificationReceivedLabel.bottomAnchor.constraint(lessThanOrEqualTo: nicetyLabel.topAnchor, constant: -8)
+		])
+	}
 	
 //
 //	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

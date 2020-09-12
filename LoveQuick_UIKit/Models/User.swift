@@ -26,11 +26,7 @@ class User: Equatable {
 	}
 	let publishedDisplayName = PublishSubject<String>()
 	var email: String?
-	var loveLetters: String! {
-		didSet {
-			Globals.user = self
-		}
-	}
+	var loveLetters: String!
 	var userListWithUIDs = [String]()
 	var loveListWithNames = [String]()
 	var loveLetterDictionary = Dictionary<String,String>()
@@ -38,6 +34,12 @@ class User: Equatable {
 	var isAbleToSendLove: Bool = true
 	let dispatchGroup = DispatchGroup()
 	var hasUpdatedFromDB = false
+	var deviceToken: String! {
+		willSet {
+			guard newValue != "" else { return }
+			db.collection("users").document(self.uid).updateData(["Device token" : newValue!])
+		}
+	}
 	
 	//MARK: Err enum
 	enum Error: Swift.Error {
@@ -57,7 +59,8 @@ class User: Equatable {
 		self.displayName = displayName
 		self.email = email
 		self.db = Firestore.firestore()
-		
+		self.deviceToken = ""
+		fetchLoveLetters()
 	}
 	
 	//
@@ -94,10 +97,13 @@ class User: Equatable {
 	}
 	
 	func updateFirestoreWithInfo() {
+		
+		//TODO: Update to copy the sample data
+		
 		db.collection("users").document(uid).setData([
 			"Display name": displayName!,
 			"Email": email!,
-			"LoveList": generateLoveLetters(),
+			"LoveLetters": generateLoveLetters(),
 			"User list": userListWithUIDs,
 		])
 	}
@@ -107,10 +113,10 @@ class User: Equatable {
 			if let error = error {
 				print("Error \(error)")
 			} else {
-				//change displayName
-				self.changeDisplayName(to: displayName)
 				//create DB reference
 				self.updateFirestoreWithInfo()
+				//change displayName
+				self.changeDisplayName(to: displayName)
 			}
 		}
 	}

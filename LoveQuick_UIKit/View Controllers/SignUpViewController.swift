@@ -32,6 +32,10 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
 		signUpButton.styleForLogin()
 		view.backgroundColor = UIColor(displayP3Red: 176/255, green: 145/255, blue: 237/255, alpha: 1)
 		
+		// Nav controller stuff
+		self.navigationController?.navigationBar.isHidden = false
+		self.navigationItem.leftBarButtonItem = self.navigationItem.backBarButtonItem
+	
 		//MARK: fields in view
 		firstName.delegate = self
 		lastName.delegate = self
@@ -40,6 +44,16 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
 		passwordAuthField.delegate = self
     }
     
+	override func viewWillDisappear(_ animated: Bool) {
+		self.navigationController?.heroNavigationAnimationType = .push(direction: .right)
+		super.viewWillDisappear(animated)
+		self.navigationController?.navigationBar.isHidden = true
+	}
+//	override func viewWillAppear(_ animated: Bool) {
+//		super.viewWillAppear(animated)
+//		self.navigationController?.navigationBar.isHidden = false
+//	}
+	
 	//MARK: Auth
 	
 	

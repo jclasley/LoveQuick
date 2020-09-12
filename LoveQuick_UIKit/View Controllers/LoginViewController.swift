@@ -86,7 +86,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 	}
 	
 	@IBAction func signUpTapped(_ sender: Any) {
-		self.performSegue(withIdentifier: "navToSignUp", sender: nil)
+		guard let signUpVC = self.storyboard?.instantiateViewController(identifier: "signUp") else {
+			return
+		}
+		self.navigationController?.heroNavigationAnimationType = .pull(direction: .left)
+		self.navigationController?.pushViewController(signUpVC, animated: true)
 	}
 	
 	//MARK: Auth
@@ -99,8 +103,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 		
 		if (emailField.hasText && passwordField.hasText) {
 			Auth.auth().signIn(withEmail: emailField.text!, password: passwordField.text!) { result, error in
-				if (error != nil) {
-					self.errorMessage.isHidden = false
+				if let error = error {
+					//TODO: Enumerate errors
+					print("Raw error \(error)")
+					print("Error description \(error.localizedDescription)")
+					self.showErrorMessage(withMessage: "")
+					activity.stopAnimating()
 				} else {
 					activity.stopAnimating()
 					if isFirstTime() {
@@ -120,12 +128,31 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 		}
 	}
 	
+	private func showErrorMessage(withMessage text: String) {
+		
+	}
+	
 	func colorChangeTransition(of v: UIView, to vc: UIViewController, color: UIColor = .systemPink) {
 		UIView.animate(withDuration: 1, animations: {
 			v.backgroundColor = color
 		}, completion: { _ in
 			self.navigationController?.pushViewController(vc, animated: true)
 		})
+	}
+	
+	enum ErrorMessages {
+		case invalidEmail(message: String)
+		case invalidPassword(message: String)
+		case timeout(message: String)
+		
+		var message: String {
+			switch self {
+				case .invalidEmail(let message),
+					 .invalidPassword(let message),
+					 .timeout(let message):
+				return message
+			}
+		}
 	}
 
 }

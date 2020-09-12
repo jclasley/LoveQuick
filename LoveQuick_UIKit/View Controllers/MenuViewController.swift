@@ -10,6 +10,7 @@ import UIKit
 import Hero
 import FirebaseFirestore
 import FirebaseAuth
+import RxSwift
 
 class MenuViewController: UIViewController, UITextFieldDelegate {
 	
@@ -20,7 +21,7 @@ class MenuViewController: UIViewController, UITextFieldDelegate {
 	override func viewDidLoad() {
         super.viewDidLoad()
 		self.signOutButton.styleForLogin()
-		
+		loveLetters.text = Globals.user?.loveLetters
 		self.navigationItem.title = "Profile"
     }
 	
@@ -41,13 +42,8 @@ class MenuViewController: UIViewController, UITextFieldDelegate {
 		displayName.text = self.user?.displayName
 		displayName.isEnabled = false
 		displayName.delegate = self
-		
 		email.text = self.user?.email
 		email.isEnabled = false
-		email.delegate = self
-		
-		loveLetters.text = Globals.user?.loveLetters
-		
 	}
 	
 	@IBAction func changeDisplayName (_ sender: Any) {
