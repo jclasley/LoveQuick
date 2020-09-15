@@ -10,6 +10,7 @@ import UIKit
 import FirebaseCore
 import FirebaseFirestore
 import UserNotifications
+import BackgroundTasks
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,7 +25,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		registerForPushNotifications()
 		
 		//	Opened via push notifications
-		let notificationOption = launchOptions?[.remoteNotification] 
+		let notificationOption = launchOptions?[.remoteNotification]
+		BGTaskScheduler.shared.register(forTaskWithIdentifier: "com.jonlasley.LoveQuick-UIKit.updateTimeRemaining", using: nil, launchHandler: { task in
+			
+		})
+		// Register background refresh task
+		
 		return true
 	}
 
@@ -76,6 +82,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	  _ application: UIApplication,
 	  didFailToRegisterForRemoteNotificationsWithError error: Error) {
 	  print("Failed to register: \(error)")
+	}
+	
+	func applicationWillEnterForeground(_ application: UIApplication) {
+		let db = Firestore.firestore()
+		guard let uid = Globals.user?.uid else { return }
+		db.collection("users").document(uid).getDocument(completion: { docSnap, error in
+			docSnap?.get("Time last tapped")
+		})
+		print("Entered foreground")
 	}
 
 

@@ -81,6 +81,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 		return true
 	}
 	
+	func textFieldDidBeginEditing(_ textField: UITextField) {
+		errorMessage.isHidden = true // hide to make repeat errors clearer
+	}
+	
 	@IBAction func returnView(_ sender: Any) {
 		view.endEditing(true)
 	}
@@ -98,10 +102,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 		let activity = UIActivityIndicatorView(style: .large)
 		activity.center = self.view.center
 		activity.frame = self.view.frame
-		activity.startAnimating()
-		self.view.addSubview(activity)
 		
-		if (emailField.hasText && passwordField.hasText) {
+		if (emailField.text!.contains("@") && passwordField.text!.count > 0) {
+			activity.startAnimating()
+			self.view.addSubview(activity)
 			Auth.auth().signIn(withEmail: emailField.text!, password: passwordField.text!) { result, error in
 				if let error = error {
 					//TODO: Enumerate errors
@@ -125,11 +129,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 					}
 				}
 			}			
+		} else {
+			self.showErrorMessage(withMessage: "You must enter a valid email address")
 		}
 	}
 	
 	private func showErrorMessage(withMessage text: String) {
-		
+		errorMessage.text = text
+		errorMessage.isHidden = false
 	}
 	
 	func colorChangeTransition(of v: UIView, to vc: UIViewController, color: UIColor = .systemPink) {

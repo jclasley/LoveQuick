@@ -14,6 +14,8 @@
 		1D41DD542450C622000E91F3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D41DD532450C622000E91F3 /* SignUpViewController.swift */; };
 		1D41DD582450F6AF000E91F3 /* LoginButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D41DD572450F6AF000E91F3 /* LoginButtons.swift */; };
 		1D4478A224AFD0110042BC39 /* FirstTimeNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4478A124AFD0110042BC39 /* FirstTimeNicknameViewController.swift */; };
+		1D626DCA251184360031FC10 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D626DC9251184360031FC10 /* NotificationService.swift */; };
+		1D626DCE251184360031FC10 /* LoveQuickNotificationService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1D626DC7251184360031FC10 /* LoveQuickNotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		1D63843B2495BF2100FD8272 /* LoveListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D63843A2495BF2100FD8272 /* LoveListViewController.swift */; };
 		1D87EC23245F5BAB00043947 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D87EC22245F5BAB00043947 /* AppDelegate.swift */; };
 		1D9B95F1246C7F4F0074087E /* LoveListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B95F0246C7F4F0074087E /* LoveListTableViewCell.swift */; };
@@ -42,6 +44,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1D626DCC251184360031FC10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1DA853D3244931BB002AA7A3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1D626DC6251184360031FC10;
+			remoteInfo = LoveQuickNotificationService;
+		};
 		1DA853F2244931BD002AA7A3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1DA853D3244931BB002AA7A3 /* Project object */;
@@ -58,6 +67,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1D626DCF251184360031FC10 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				1D626DCE251184360031FC10 /* LoveQuickNotificationService.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		143131E6E54CCBBE366BCBA5 /* Pods_LoveQuick_UIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoveQuick_UIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1970A5F4D449F7CF6370E25B /* Pods-LoveQuick_UIKit-LoveQuick_UIKitUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoveQuick_UIKit-LoveQuick_UIKitUITests.release.xcconfig"; path = "Target Support Files/Pods-LoveQuick_UIKit-LoveQuick_UIKitUITests/Pods-LoveQuick_UIKit-LoveQuick_UIKitUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -69,6 +92,9 @@
 		1D41DD552450EAA0000E91F3 /* COLORS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = COLORS.md; sourceTree = "<group>"; };
 		1D41DD572450F6AF000E91F3 /* LoginButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButtons.swift; sourceTree = "<group>"; };
 		1D4478A124AFD0110042BC39 /* FirstTimeNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTimeNicknameViewController.swift; sourceTree = "<group>"; };
+		1D626DC7251184360031FC10 /* LoveQuickNotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LoveQuickNotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D626DC9251184360031FC10 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		1D626DCB251184360031FC10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D63843A2495BF2100FD8272 /* LoveListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveListViewController.swift; sourceTree = "<group>"; };
 		1D87EC22245F5BAB00043947 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D9B95F0246C7F4F0074087E /* LoveListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveListTableViewCell.swift; sourceTree = "<group>"; };
@@ -108,6 +134,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1D626DC4251184360031FC10 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1DA853D8244931BB002AA7A3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -155,6 +188,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		1D626DC8251184360031FC10 /* LoveQuickNotificationService */ = {
+			isa = PBXGroup;
+			children = (
+				1D626DC9251184360031FC10 /* NotificationService.swift */,
+				1D626DCB251184360031FC10 /* Info.plist */,
+			);
+			path = LoveQuickNotificationService;
+			sourceTree = "<group>";
+		};
 		1D9928362450BF3000E9F4C0 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +220,7 @@
 				1DA853DD244931BB002AA7A3 /* LoveQuick_UIKit */,
 				1DA853F4244931BD002AA7A3 /* LoveQuick_UIKitTests */,
 				1DA853FF244931BD002AA7A3 /* LoveQuick_UIKitUITests */,
+				1D626DC8251184360031FC10 /* LoveQuickNotificationService */,
 				1DA853DC244931BB002AA7A3 /* Products */,
 				47D368BAB7F720FCE8F3B742 /* Pods */,
 				B1A5A944ABD68DCD13137D89 /* Frameworks */,
@@ -190,6 +233,7 @@
 				1DA853DB244931BB002AA7A3 /* LoveQuick_UIKit.app */,
 				1DA853F1244931BD002AA7A3 /* LoveQuick_UIKitTests.xctest */,
 				1DA853FC244931BD002AA7A3 /* LoveQuick_UIKitUITests.xctest */,
+				1D626DC7251184360031FC10 /* LoveQuickNotificationService.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -271,6 +315,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1D626DC6251184360031FC10 /* LoveQuickNotificationService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D626DD2251184360031FC10 /* Build configuration list for PBXNativeTarget "LoveQuickNotificationService" */;
+			buildPhases = (
+				1D626DC3251184360031FC10 /* Sources */,
+				1D626DC4251184360031FC10 /* Frameworks */,
+				1D626DC5251184360031FC10 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LoveQuickNotificationService;
+			productName = LoveQuickNotificationService;
+			productReference = 1D626DC7251184360031FC10 /* LoveQuickNotificationService.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		1DA853DA244931BB002AA7A3 /* LoveQuick_UIKit */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1DA85405244931BD002AA7A3 /* Build configuration list for PBXNativeTarget "LoveQuick_UIKit" */;
@@ -280,10 +341,12 @@
 				1DA853D8244931BB002AA7A3 /* Frameworks */,
 				1DA853D9244931BB002AA7A3 /* Resources */,
 				CD5E7873A259CB1D297D24D2 /* [CP] Embed Pods Frameworks */,
+				1D626DCF251184360031FC10 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				1D626DCD251184360031FC10 /* PBXTargetDependency */,
 			);
 			name = LoveQuick_UIKit;
 			productName = LoveQuick_UIKit;
@@ -336,10 +399,13 @@
 		1DA853D3244931BB002AA7A3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1140;
+				LastSwiftUpdateCheck = 1170;
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Jonathan Lasley";
 				TargetAttributes = {
+					1D626DC6251184360031FC10 = {
+						CreatedOnToolsVersion = 11.7;
+					};
 					1DA853DA244931BB002AA7A3 = {
 						CreatedOnToolsVersion = 11.4;
 					};
@@ -369,11 +435,19 @@
 				1DA853DA244931BB002AA7A3 /* LoveQuick_UIKit */,
 				1DA853F0244931BD002AA7A3 /* LoveQuick_UIKitTests */,
 				1DA853FB244931BD002AA7A3 /* LoveQuick_UIKitUITests */,
+				1D626DC6251184360031FC10 /* LoveQuickNotificationService */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1D626DC5251184360031FC10 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1DA853D9244931BB002AA7A3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -522,6 +596,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1D626DC3251184360031FC10 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D626DCA251184360031FC10 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1DA853D7244931BB002AA7A3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -570,6 +652,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1D626DCD251184360031FC10 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1D626DC6251184360031FC10 /* LoveQuickNotificationService */;
+			targetProxy = 1D626DCC251184360031FC10 /* PBXContainerItemProxy */;
+		};
 		1DA853F3244931BD002AA7A3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1DA853DA244931BB002AA7A3 /* LoveQuick_UIKit */;
@@ -602,6 +689,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1D626DD0251184360031FC10 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5HP87M7CV3;
+				INFOPLIST_FILE = LoveQuickNotificationService/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jonlasley.LoveQuick-UIKit.LoveQuickNotificationService";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1D626DD1251184360031FC10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5HP87M7CV3;
+				INFOPLIST_FILE = LoveQuickNotificationService/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jonlasley.LoveQuick-UIKit.LoveQuickNotificationService";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		1DA85403244931BD002AA7A3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -720,6 +849,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 864D0E46BC5680BD6593C93A /* Pods-LoveQuick_UIKit.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = LoveQuick_UIKit/LoveQuick_UIKit.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -742,6 +872,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D524395210BE3292D7D7D647 /* Pods-LoveQuick_UIKit.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = LoveQuick_UIKit/LoveQuick_UIKit.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -847,6 +978,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1D626DD2251184360031FC10 /* Build configuration list for PBXNativeTarget "LoveQuickNotificationService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D626DD0251184360031FC10 /* Debug */,
+				1D626DD1251184360031FC10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		1DA853D6244931BB002AA7A3 /* Build configuration list for PBXProject "LoveQuick_UIKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

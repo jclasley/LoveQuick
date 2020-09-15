@@ -88,6 +88,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
 			let totalTagHeight = textField.frame.height * CGFloat((textField.tag - 1))
 			view.frame.origin.y -= totalTagHeight
 		}
+		// clear error to elucidate repeat errors
+		self.errorLabel.text = ""
 	}
 	
 	func textFieldDidEndEditing(_ textField: UITextField) {
@@ -105,8 +107,10 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
 	//MARK: Auth functions
 	
 	@IBAction func signUp(_ sender: Any) {
-		let passwordMatching = passwordsMatch()
-		if passwordMatching && fieldsAreFull(fields: emailField, passwordField, passwordAuthField, firstName, lastName) {
+		
+		let fieldsAreValidatedBool = fieldsAreValidated(fields: emailField, passwordField, passwordAuthField, firstName, lastName).0
+		let fieldsAreValidatedError = fieldsAreValidated(fields: emailField, passwordField, passwordAuthField, firstName, lastName).1
+		if fieldsAreValidatedBool {
 			Auth.auth().createUser(withEmail: emailField.text!, password: passwordField.text!) { result, error in
 				if error != nil {
 					//show error description
@@ -124,26 +128,51 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
 				}
 			}
 			
-		} else if !passwordMatching {
-			self.errorLabel.text = "Passwords don't match"
-			self.errorLabel.isHidden = false
 		} else {
-			self.errorLabel.text = "Oops!"
+			self.errorLabel.text = fieldsAreValidatedError?.message
 			self.errorLabel.isHidden = false
 		}
 		
 	}
 
+	enum ErrorMessages {
+		case invalidEmail(message: String)
+		case passwordsNotMatch(message: String)
+		case blankField(message: String)
+
+		var message: String {
+			switch self {
+				case .invalidEmail(let message),
+					.passwordsNotMatch(let message),
+					.blankField(let message):
+				return message
+			}
+		}
+	}
 	
-	func fieldsAreFull(fields: UITextField...) -> Bool {
+	func fieldsAreValidated(fields: UITextField...) -> (Bool, ErrorMessages?) {
 		var full = true
+		var error: ErrorMessages?
 		for field in fields {
 			if !field.hasText {
 				full = false
-				break
+				error = .blankField(message: "All fields are required")
+				return (full, error)
 			}
 		}
-		return full
+		if let email = emailField.text {
+			if email.match(regex: "@.*com") == nil {
+				full = false
+				error = .invalidEmail(message: "Please enter a valid email address")
+				return (full, error)
+			}
+		}
+		if passwordField.text != passwordAuthField.text {
+			full = false
+			error = .passwordsNotMatch(message: "Passwords don't match")
+			return (full, error)
+		}
+		return (full, error)
 	}
 	
 	//MARK: DB

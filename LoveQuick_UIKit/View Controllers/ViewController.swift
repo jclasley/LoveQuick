@@ -84,6 +84,15 @@ class ViewController: UIViewController {
 
 	}
 	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		//MARK: NavigationBar
+		self.navigationController?.navigationBar.isHidden = true
+		self.navigationController?.modalPresentationStyle = .fullScreen
+		showTimerLabel() // in case view is loading from when there is a timer
+		self.view.setNeedsDisplay()
+	}
+	
 	//MARK: animation
 	func createTapGesutre(for view: UIView) {
 		let tap = UITapGestureRecognizer(target: self, action: #selector(doAnimation(recognizer:)))
@@ -106,7 +115,6 @@ class ViewController: UIViewController {
 				print(e)
 			} else {
 				self.triggerDate = sendAgainTrigger.nextTriggerDate()!
-				self.showTimerLabel()
 			}
 		})
 	}
@@ -114,31 +122,36 @@ class ViewController: UIViewController {
 	var triggerDate: Date!
 	@IBOutlet weak var timerLabel: UILabel!
 	private func showTimerLabel() {
+		guard !Globals.user!.isAbleToSendLove else { print("Guarded"); return } // prevent showing of label when there is no need to
 		DispatchQueue.main.async {
 			self.timerLabel.text = ""
 			self.timerLabel.isHidden = false
 		}
 		
-		let triggerSeconds = Calendar.current.dateComponents([.second], from: Date(), to: triggerDate).second
-		_ = Observable.interval(1, scheduler: MainScheduler.instance)
-			.map({ triggerSeconds! - $0 })
-			.takeWhile({$0>=0})
-			.subscribe(onNext: { timePassed in
-			
-			if timePassed == 0 { //timer ended
-				self.timerLabel.isHidden = true
-				self.timerLabel.text = "0:00"
-				Globals.user?.isAbleToSendLove = true
+		Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { timer in
+
+			let timeLeft = Int(Globals.user!.timeRemainingToTapInSeconds)
+			guard timeLeft >= 0 else { // should never reach this state
 				self.heartCover.removeFromSuperview()
-			} else { //timer going
-				self.timerLabel.text = convertSecondsToFormattedTime(seconds: timePassed)
-				self.reduceHeight(of: self.heartCover, by: CGFloat(triggerSeconds! - timePassed))
+				timer.invalidate()
+				return
+			}
+			if timeLeft == 0 {
+				Globals.user!.isAbleToSendLove = true
+				self.timerLabel.text = "0:00"
+				self.timerLabel.isHidden = true
+				self.heartCover.removeFromSuperview()
+				timer.invalidate()
+			} else {
+				self.timerLabel.text = convertSecondsToFormattedTime(seconds: timeLeft)
+				self.reduceHeight(of: self.heartCover, to: CGFloat(CustomAnimations.totalTime - timeLeft))
 			}
 		})
 	}
+
 	
 	var initialCoverHeight: CGFloat!
-	private func reduceHeight(of cover: UIView, by x: CGFloat) {
+	private func reduceHeight(of cover: UIView, to x: CGFloat) {
 		UIView.animate(withDuration: 1, delay: 0, options: .curveLinear, animations: {
 			cover.frame.size.height = self.initialCoverHeight - (CGFloat(self.initialCoverHeight/CGFloat(CustomAnimations.totalTime))*x)
 		})
@@ -162,8 +175,9 @@ class ViewController: UIViewController {
 		if Globals.user!.isAbleToSendLove {
 			CustomAnimations.fallingHeartsAnimation(view: tappedView, completion: {
 				Globals.user!.isAbleToSendLove = false
-				
+				Globals.user!.dateLastTapped = Date()
 				self.createNotification()
+				self.showTimerLabel()
 				self.addBlockOverHeart(tappedView)
 				self.heartImage.isHidden = false
 			})
@@ -178,14 +192,6 @@ class ViewController: UIViewController {
 	
 	@IBAction func animationOne(_ sender: Any) {
 		CustomAnimations.fallingHeartsAnimation(view: heartImage)
-	}
-	
-	override func viewWillAppear(_ animated: Bool) {
-		super.viewWillAppear(animated)
-		//MARK: NavigationBar
-		self.navigationController?.navigationBar.isHidden = true
-		self.navigationController?.modalPresentationStyle = .fullScreen
-		self.view.setNeedsDisplay()
 	}
 
 	@IBAction func returnToView(_ sender: Any) {

@@ -41,6 +41,38 @@ class User: Equatable {
 		}
 	}
 	
+	//MARK: tap timers
+	var dateLastTapped: Date? {
+		willSet {
+			guard newValue != nil else { return }
+			// save into dateNextTapAvailable
+			dateNextTapAvailable = Date(timeIntervalSinceNow: TimeInterval(CustomAnimations.totalTime))
+			// Log to db
+			self.db.collection("users").document(self.uid).updateData(["Time last tapped" : Timestamp(date: newValue!)])
+			// Construct time differential
+//			let nextTapComponents = Calendar.current.dateComponents([.hour, .minute, .second], from: dateNextTapAvailable!)
+//			let nowComponents = Calendar.current.dateComponents([.hour, .minute, .second], from: Date())
+//			// set it
+//			let nextTap = Calendar.current.dateComponents([.minute, .second], from: nowComponents, to: nextTapComponents)
+			
+		}
+		didSet {
+			print(dateLastTapped)
+		}
+	}
+	var dateNextTapAvailable: Date? {
+		didSet {
+			print("Date next avail: \(dateNextTapAvailable)")
+		}
+	}// is set when dateLastTapped is set
+	var timeRemainingToTapInSeconds: Double {
+		get {
+			guard dateNextTapAvailable != nil && dateNextTapAvailable! > Date() else { return 0 }
+			return DateInterval(start: Date(), end: dateNextTapAvailable!).duration
+		}
+	}
+	
+	
 	//MARK: Err enum
 	enum Error: Swift.Error {
 		case invalidUser
