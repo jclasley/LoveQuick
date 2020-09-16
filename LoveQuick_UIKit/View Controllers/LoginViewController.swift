@@ -76,6 +76,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 		} else if let nextField = textField.superview?.superview?.viewWithTag(nextTag){
 			nextField.becomeFirstResponder()
 		} else {
+			signIn(self)
 			textField.resignFirstResponder()
 		}
 		return true
@@ -133,6 +134,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 			self.showErrorMessage(withMessage: "You must enter a valid email address")
 		}
 	}
+	
+	@IBAction func forgotPassword(_ sender: Any) {
+		guard let forgotVC = self.storyboard?.instantiateViewController(identifier: "forgotPassword")  else { return }
+		forgotVC.hero.isEnabled = true
+		forgotVC.navigationController?.navigationBar.isHidden = false
+		forgotVC.navigationController?.heroNavigationAnimationType = .pull(direction: .left)
+		self.navigationController?.pushViewController(forgotVC, animated: true)
+	}
+	
 	
 	private func showErrorMessage(withMessage text: String) {
 		errorMessage.text = text

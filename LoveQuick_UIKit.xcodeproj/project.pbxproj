@@ -16,6 +16,7 @@
 		1D4478A224AFD0110042BC39 /* FirstTimeNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4478A124AFD0110042BC39 /* FirstTimeNicknameViewController.swift */; };
 		1D626DCA251184360031FC10 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D626DC9251184360031FC10 /* NotificationService.swift */; };
 		1D626DCE251184360031FC10 /* LoveQuickNotificationService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1D626DC7251184360031FC10 /* LoveQuickNotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1D626DD42512BE660031FC10 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D626DD32512BE660031FC10 /* ForgotPasswordViewController.swift */; };
 		1D63843B2495BF2100FD8272 /* LoveListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D63843A2495BF2100FD8272 /* LoveListViewController.swift */; };
 		1D87EC23245F5BAB00043947 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D87EC22245F5BAB00043947 /* AppDelegate.swift */; };
 		1D9B95F1246C7F4F0074087E /* LoveListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9B95F0246C7F4F0074087E /* LoveListTableViewCell.swift */; };
@@ -95,6 +96,7 @@
 		1D626DC7251184360031FC10 /* LoveQuickNotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LoveQuickNotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D626DC9251184360031FC10 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		1D626DCB251184360031FC10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D626DD32512BE660031FC10 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ForgotPasswordViewController.swift; path = "View Controllers/ForgotPasswordViewController.swift"; sourceTree = "<group>"; };
 		1D63843A2495BF2100FD8272 /* LoveListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveListViewController.swift; sourceTree = "<group>"; };
 		1D87EC22245F5BAB00043947 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D9B95F0246C7F4F0074087E /* LoveListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveListTableViewCell.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 				1DA853E0244931BB002AA7A3 /* SceneDelegate.swift */,
 				1DA853E4244931BB002AA7A3 /* Main.storyboard */,
 				1DA853E7244931BD002AA7A3 /* Assets.xcassets */,
+				1D626DD32512BE660031FC10 /* ForgotPasswordViewController.swift */,
 				1DA853E9244931BD002AA7A3 /* LaunchScreen.storyboard */,
 				1DA853EC244931BD002AA7A3 /* Info.plist */,
 				1D41DD552450EAA0000E91F3 /* COLORS.md */,
@@ -610,6 +613,7 @@
 			files = (
 				1D4478A224AFD0110042BC39 /* FirstTimeNicknameViewController.swift in Sources */,
 				1D87EC23245F5BAB00043947 /* AppDelegate.swift in Sources */,
+				1D626DD42512BE660031FC10 /* ForgotPasswordViewController.swift in Sources */,
 				1D1F90A0244F93FA00B03B34 /* LoginViewController.swift in Sources */,
 				1DA81B002489A5F000A048A6 /* LoadingViewController.swift in Sources */,
 				1D41DD542450C622000E91F3 /* SignUpViewController.swift in Sources */,
