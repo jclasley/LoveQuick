@@ -28,6 +28,11 @@ class AddToLoveListViewController: UIViewController {
 		addedConfirmation.isHidden = true
     }
     
+	override func viewWillDisappear(_ animated: Bool) {
+		self.navigationController?.hero.navigationAnimationType = .push(direction: .right)
+		super.viewWillDisappear(true)
+	}
+	
 	@IBAction func returnToView(_ sender: Any) {
 		self.loveLetters.endEditing(true)
 	}

@@ -246,6 +246,14 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MVu-nv-qSA">
+                                <rect key="frame" x="126" y="710" width="123" height="30"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <state key="normal" title="Forgot password?"/>
+                                <connections>
+                                    <action selector="forgotPassword:" destination="6M7-bC-UOM" eventType="touchUpInside" id="AN0-1g-QcI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.69019607839999997" green="0.57254901960000004" blue="0.90593647960000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <gestureRecognizers/>
@@ -256,9 +264,11 @@
                             <constraint firstItem="vUu-Yc-ij5" firstAttribute="top" secondItem="exz-dc-iN7" secondAttribute="top" constant="48" id="MEy-QV-M5H"/>
                             <constraint firstItem="F4s-cS-fbZ" firstAttribute="centerX" secondItem="exz-dc-iN7" secondAttribute="centerX" id="NlZ-CK-i0T"/>
                             <constraint firstItem="dI9-iG-iAp" firstAttribute="bottom" secondItem="F4s-cS-fbZ" secondAttribute="top" id="PaS-DI-eSH"/>
+                            <constraint firstItem="zSm-dj-Wfa" firstAttribute="top" secondItem="MVu-nv-qSA" secondAttribute="bottom" constant="4" id="dJw-BW-thb"/>
                             <constraint firstItem="dI9-iG-iAp" firstAttribute="centerX" secondItem="exz-dc-iN7" secondAttribute="centerX" id="dsk-7a-AVP"/>
                             <constraint firstItem="dI9-iG-iAp" firstAttribute="top" relation="greaterThanOrEqual" secondItem="stP-2F-JLC" secondAttribute="bottom" constant="32" id="gcJ-OX-jCd"/>
                             <constraint firstItem="zSm-dj-Wfa" firstAttribute="centerX" secondItem="exz-dc-iN7" secondAttribute="centerX" id="o10-VM-lhf"/>
+                            <constraint firstItem="MVu-nv-qSA" firstAttribute="centerX" secondItem="exz-dc-iN7" secondAttribute="centerX" id="qUH-ip-dPW"/>
                             <constraint firstItem="stP-2F-JLC" firstAttribute="centerX" secondItem="exz-dc-iN7" secondAttribute="centerX" id="rPh-xR-QgS"/>
                             <constraint firstItem="dI9-iG-iAp" firstAttribute="top" secondItem="stP-2F-JLC" secondAttribute="bottom" priority="999" constant="48" id="sZR-7A-QU1"/>
                             <constraint firstItem="exz-dc-iN7" firstAttribute="bottom" secondItem="zSm-dj-Wfa" secondAttribute="bottom" constant="16" id="tz2-YE-37O"/>
@@ -972,6 +982,78 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1491.304347826087" y="206.25"/>
+        </scene>
+        <!--Forgot Password View Controller-->
+        <scene sceneID="8tb-MV-sBc">
+            <objects>
+                <viewController storyboardIdentifier="forgotPassword" id="2WP-5g-m12" customClass="ForgotPasswordViewController" customModule="LoveQuick_UIKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="68w-hO-evH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter the email associated with your account" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dat-Xd-W1v">
+                                <rect key="frame" x="16" y="175" width="343" height="77"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ht6-px-bxz">
+                                <rect key="frame" x="87.666666666666686" y="387.66666666666669" width="200" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" priority="999" constant="200" id="xfP-50-00p"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nET-8a-jof">
+                                <rect key="frame" x="168" y="429" width="39" height="30"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="submitPasswordReset:" destination="2WP-5g-m12" eventType="touchUpInside" id="ZLX-lk-99H"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;response&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HVC-dc-8Ks">
+                                <rect key="frame" x="141.66666666666666" y="284" width="92" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.69019607839999997" green="0.56862745100000001" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="dat-Xd-W1v" firstAttribute="leading" secondItem="68w-hO-evH" secondAttribute="leading" constant="16" id="1DU-Zr-dxc"/>
+                            <constraint firstItem="ht6-px-bxz" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="J20-q2-RWD" secondAttribute="leading" constant="8" id="Aqc-P8-dty"/>
+                            <constraint firstItem="nET-8a-jof" firstAttribute="centerX" secondItem="68w-hO-evH" secondAttribute="centerX" id="EmB-g5-dz3"/>
+                            <constraint firstItem="J20-q2-RWD" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ht6-px-bxz" secondAttribute="trailing" constant="8" id="TGo-6z-Kir"/>
+                            <constraint firstItem="ht6-px-bxz" firstAttribute="firstBaseline" secondItem="J20-q2-RWD" secondAttribute="centerY" id="Wrl-Pz-05q"/>
+                            <constraint firstItem="dat-Xd-W1v" firstAttribute="top" secondItem="J20-q2-RWD" secondAttribute="top" constant="131" id="cfg-PK-fav"/>
+                            <constraint firstItem="HVC-dc-8Ks" firstAttribute="centerX" secondItem="68w-hO-evH" secondAttribute="centerX" id="eL6-ub-Dgs"/>
+                            <constraint firstItem="HVC-dc-8Ks" firstAttribute="top" secondItem="dat-Xd-W1v" secondAttribute="bottom" constant="32" id="faB-RR-aC3"/>
+                            <constraint firstItem="dat-Xd-W1v" firstAttribute="centerX" secondItem="68w-hO-evH" secondAttribute="centerX" id="kdx-oa-fHu"/>
+                            <constraint firstItem="nET-8a-jof" firstAttribute="top" secondItem="ht6-px-bxz" secondAttribute="bottom" constant="7.3333333333333144" id="p8I-Il-Yrc"/>
+                            <constraint firstItem="ht6-px-bxz" firstAttribute="centerX" secondItem="68w-hO-evH" secondAttribute="centerX" id="wf9-YR-dFf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="J20-q2-RWD"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="8Od-Fu-2Qs" appends="YES" id="ZWk-T6-aaE"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="emailToReset" destination="ht6-px-bxz" id="2kZ-cO-lJW"/>
+                        <outlet property="leaveView" destination="8Od-Fu-2Qs" id="FPb-YT-Iln"/>
+                        <outlet property="resetButton" destination="nET-8a-jof" id="dr4-vi-wkS"/>
+                        <outlet property="responseLabel" destination="HVC-dc-8Ks" id="CF3-8Q-iPI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mwf-pf-BjF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="8Od-Fu-2Qs">
+                    <connections>
+                        <action selector="leaveTextField:" destination="2WP-5g-m12" id="w7L-f6-wbW"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="876" y="-567.48768472906409"/>
         </scene>
     </scenes>
     <resources>
