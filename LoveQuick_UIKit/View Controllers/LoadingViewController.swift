@@ -43,7 +43,7 @@ class LoadingViewController: UIViewController {
 				self.user = User(uid: user.uid, displayName: user.displayName, email: user.email)
 				//fetch letter
 				Globals.user = self.user
-				Globals.user?.fetchLoveLetters()
+				
 				if let mainViewController = self.storyboard?.instantiateViewController(identifier: "mainVC") {
 					mainViewController.hero.isEnabled = true
 					self.loveQuickTitle.heroModifiers = [.fade]
@@ -62,6 +62,8 @@ class LoadingViewController: UIViewController {
 				}
 			}
 		}
+		
+		
 	}
 	
 	override func viewWillDisappear(_ animated: Bool) {

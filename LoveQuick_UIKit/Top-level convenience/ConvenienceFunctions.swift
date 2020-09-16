@@ -38,30 +38,41 @@ func isFirstTime() -> Bool {
 
 func generateLoveLetters() -> String {
 	let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-	var l: String
-	repeat {
-		l = String((0..<5).map({ _ in letters.randomElement()! }))
-	} while (loveLettersTaken(letters: l))
-	return l
+	Globals.user?.loveLetters = String((0..<5).map({ _ in letters.randomElement()! }))
+	return Globals.user!.loveLetters
 }
 
-private func loveLettersTaken(letters: String) -> Bool {
-	let db = Firestore.firestore()
-	let usersRef = db.collection("users")
-	var takenOrError: Bool = true
-	usersRef.whereField("LoveLetters", isEqualTo: letters).getDocuments(completion: { (qSnap, error) in
-		if let error = error {
-			print(error.localizedDescription)
-			takenOrError = true
+//private func loveLettersTaken(letters: String, async dispatch: DispatchGroup) -> Bool {
+//	let db = Firestore.firestore()
+//	let usersRef = db.collection("users")
+//	var takenOrError: Bool = true
+//	let query = usersRef.whereField("LoveLetters", isEqualTo: letters)
+//
+//	dispatch.enter()
+//	let listener: FIRQuerySnapshotBlock = { snapshot, error in
+//		if let qSnap = snapshot {
+//			if qSnap.isEmpty {
+//				takenOrError = false
+//			} else {
+//				takenOrError = true
+//			}
+//			dispatch.leave()
+//		}
+//	}
+//	query.addSnapshotListener(listener)
+//
+//}
+
+func convertSecondsToFormattedTime(seconds time: Int) -> String {
+	let minutes = String(time / 60)
+	var seconds: String {
+		if time % 60 < 10 {
+			return "0\(time%60)"
 		} else {
-			if qSnap!.documents.count > 0 {
-				takenOrError = true
-			} else {
-				takenOrError = false
-			}
+			return "\(time%60)"
 		}
-	})
-	return takenOrError
+	}
+	return "\(minutes):\(seconds)"
 }
 
 extension UINavigationController {

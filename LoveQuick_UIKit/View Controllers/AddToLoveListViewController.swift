@@ -60,13 +60,7 @@ class AddToLoveListViewController: UIViewController {
 			self.loveLetters.text = nil
 			return
 		}
-		guard letters != Globals.user?.loveLetters else {
-			self.addedConfirmation.text =
-				addErrors.addSelf.description
-			self.addedConfirmation.isHidden = false
-			self.loveLetters.text = nil
-			return
-		}
+		
 		let query = db.collection("users").whereField("LoveLetters", isEqualTo: loveLetters.text as Any)
 		query.getDocuments(completion: { snapshot, error in
 			if let error = error {

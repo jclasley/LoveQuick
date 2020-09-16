@@ -26,11 +26,7 @@ class User: Equatable {
 	}
 	let publishedDisplayName = PublishSubject<String>()
 	var email: String?
-	var loveLetters: String! {
-		didSet {
-			Globals.user = self
-		}
-	}
+	var loveLetters: String!
 	var userListWithUIDs = [String]()
 	var loveListWithNames = [String]()
 	var loveLetterDictionary = Dictionary<String,String>()
@@ -38,6 +34,44 @@ class User: Equatable {
 	var isAbleToSendLove: Bool = true
 	let dispatchGroup = DispatchGroup()
 	var hasUpdatedFromDB = false
+	var deviceToken: String! {
+		willSet {
+			guard newValue != "" else { return }
+			db.collection("users").document(self.uid).updateData(["Device token" : newValue!])
+		}
+	}
+	
+	//MARK: tap timers
+	var dateLastTapped: Date? {
+		willSet {
+			guard newValue != nil else { return }
+			// save into dateNextTapAvailable
+			dateNextTapAvailable = Date(timeIntervalSinceNow: TimeInterval(CustomAnimations.totalTime))
+			// Log to db
+			self.db.collection("users").document(self.uid).updateData(["Time last tapped" : Timestamp(date: newValue!)])
+			// Construct time differential
+//			let nextTapComponents = Calendar.current.dateComponents([.hour, .minute, .second], from: dateNextTapAvailable!)
+//			let nowComponents = Calendar.current.dateComponents([.hour, .minute, .second], from: Date())
+//			// set it
+//			let nextTap = Calendar.current.dateComponents([.minute, .second], from: nowComponents, to: nextTapComponents)
+			
+		}
+		didSet {
+			print(dateLastTapped)
+		}
+	}
+	var dateNextTapAvailable: Date? {
+		didSet {
+			print("Date next avail: \(dateNextTapAvailable)")
+		}
+	}// is set when dateLastTapped is set
+	var timeRemainingToTapInSeconds: Double {
+		get {
+			guard dateNextTapAvailable != nil && dateNextTapAvailable! > Date() else { return 0 }
+			return DateInterval(start: Date(), end: dateNextTapAvailable!).duration
+		}
+	}
+	
 	
 	//MARK: Err enum
 	enum Error: Swift.Error {
@@ -57,7 +91,8 @@ class User: Equatable {
 		self.displayName = displayName
 		self.email = email
 		self.db = Firestore.firestore()
-		
+		self.deviceToken = ""
+		fetchLoveLetters()
 	}
 	
 	//
@@ -94,10 +129,13 @@ class User: Equatable {
 	}
 	
 	func updateFirestoreWithInfo() {
+		
+		//TODO: Update to copy the sample data
+		
 		db.collection("users").document(uid).setData([
 			"Display name": displayName!,
 			"Email": email!,
-			"LoveList": generateLoveLetters(),
+			"LoveLetters": generateLoveLetters(),
 			"User list": userListWithUIDs,
 		])
 	}
@@ -107,10 +145,10 @@ class User: Equatable {
 			if let error = error {
 				print("Error \(error)")
 			} else {
-				//change displayName
-				self.changeDisplayName(to: displayName)
 				//create DB reference
 				self.updateFirestoreWithInfo()
+				//change displayName
+				self.changeDisplayName(to: displayName)
 			}
 		}
 	}

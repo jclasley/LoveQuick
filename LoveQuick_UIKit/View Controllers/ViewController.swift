@@ -10,6 +10,7 @@ import UIKit
 import FirebaseAuth
 import RxSwift
 import RxCocoa
+import FirebaseFirestore
 
 
 var user: User?
@@ -21,10 +22,13 @@ class ViewController: UIViewController {
 	@IBOutlet weak var nicetyLabel: UILabel!
 	@IBOutlet weak var heart: UIImageView!
 	
+	@IBOutlet weak var heartImage: UIImageView!
+	@IBOutlet weak var transitionView: UIView!
 	@IBOutlet weak var menuButton: UIButton!
 	@IBOutlet weak var loveListButton: UIButton!
 	@IBOutlet weak var greeting: UILabel!
 	let heartView = UIView()
+	let heartCover = UIView()
 	//auth vars
 	public var user: User?
 	var handle: AuthStateDidChangeListenerHandle?
@@ -34,21 +38,21 @@ class ViewController: UIViewController {
 	
 	//db
 	var dataFetched = false
-	
-	@IBOutlet weak var heartImage: UIImageView!
-	@IBOutlet weak var transitionView: UIView!
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
-		
 		//MARK: Permissions
-		UNUserNotificationCenter.current().requestAuthorization(options: [.alert], completionHandler: { auth, error in
+		UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: { auth, error in
 			if auth {
 				print("Y")
+				DispatchQueue.main.async {
+					UIApplication.shared.registerForRemoteNotifications()
+				}
+				
 			}
 		})
 		
-		//MARK: Auth redirect
 		//redirect
 		if (Globals.user == nil) {
 			showLoginScreen()
@@ -77,6 +81,16 @@ class ViewController: UIViewController {
 		//MARK: Hero
 		self.transitionView.heroModifiers = [.duration((1))]
 		self.transitionView.isHidden = true
+
+	}
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		//MARK: NavigationBar
+		self.navigationController?.navigationBar.isHidden = true
+		self.navigationController?.modalPresentationStyle = .fullScreen
+		showTimerLabel() // in case view is loading from when there is a timer
+		self.view.setNeedsDisplay()
 	}
 	
 	//MARK: animation
@@ -86,25 +100,86 @@ class ViewController: UIViewController {
 	}
 	//TODO: Add in drop down "sent" after hearts fall
 	
+	fileprivate func createNotification() {
+		// Create local notification
+		// 1. content
+		let sendAgainContent = UNMutableNotificationContent()
+		sendAgainContent.title = "Recharged!"
+		sendAgainContent.body = "Put on your tap shoes, cause you're free to tap that heart and spread the love again!"
+		// 2. trigger
+		let sendAgainTrigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(CustomAnimations.totalTime), repeats: false)
+		// 3. request
+		let sendAgainRequest = UNNotificationRequest(identifier: "sendAgain", content: sendAgainContent, trigger: sendAgainTrigger)
+		UNUserNotificationCenter.current().add(sendAgainRequest, withCompletionHandler: { error in
+			if let e = error {
+				print(e)
+			} else {
+				self.triggerDate = sendAgainTrigger.nextTriggerDate()!
+			}
+		})
+	}
+	
+	var triggerDate: Date!
+	@IBOutlet weak var timerLabel: UILabel!
+	private func showTimerLabel() {
+		guard !Globals.user!.isAbleToSendLove else { print("Guarded"); return } // prevent showing of label when there is no need to
+		DispatchQueue.main.async {
+			self.timerLabel.text = ""
+			self.timerLabel.isHidden = false
+		}
+		
+		Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { timer in
+
+			let timeLeft = Int(Globals.user!.timeRemainingToTapInSeconds)
+			guard timeLeft >= 0 else { // should never reach this state
+				self.heartCover.removeFromSuperview()
+				timer.invalidate()
+				return
+			}
+			if timeLeft == 0 {
+				Globals.user!.isAbleToSendLove = true
+				self.timerLabel.text = "0:00"
+				self.timerLabel.isHidden = true
+				self.heartCover.removeFromSuperview()
+				timer.invalidate()
+			} else {
+				self.timerLabel.text = convertSecondsToFormattedTime(seconds: timeLeft)
+				self.reduceHeight(of: self.heartCover, to: CGFloat(CustomAnimations.totalTime - timeLeft))
+			}
+		})
+	}
+
+	
+	var initialCoverHeight: CGFloat!
+	private func reduceHeight(of cover: UIView, to x: CGFloat) {
+		UIView.animate(withDuration: 1, delay: 0, options: .curveLinear, animations: {
+			cover.frame.size.height = self.initialCoverHeight - (CGFloat(self.initialCoverHeight/CGFloat(CustomAnimations.totalTime))*x)
+		})
+	}
+	
+	func addBlockOverHeart(_ heart: UIView) {
+		heartCover.frame = heart.frame
+		heartCover.backgroundColor = heart.superview!.backgroundColor
+		self.view.addSubview(heartCover)
+		NSLayoutConstraint.activate([
+			heartCover.topAnchor.constraint(equalTo: heart.topAnchor),
+			heartCover.leadingAnchor.constraint(equalTo: heart.leadingAnchor),
+			heartCover.trailingAnchor.constraint(equalTo: heart.trailingAnchor)
+		])
+		heartCover.setAnchorPoint(CGPoint(x:0.5,y:0))
+		initialCoverHeight = heartCover.frame.height
+	}
+	
 	@objc func doAnimation(recognizer: UITapGestureRecognizer) {
 		let tappedView = recognizer.view!
 		if Globals.user!.isAbleToSendLove {
-			CustomAnimations.fallingHeartsAnimation(view: tappedView)
-			Globals.user!.isAbleToSendLove = false
-			
-		// Create local notification
-			// 1. content
-			let sendAgainContent = UNMutableNotificationContent()
-			sendAgainContent.title = "Ready"
-			sendAgainContent.body = "Put on your tap shoes, cause you're free to love again!"
-			// 2. trigger
-			let sendAgainTrigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(CustomAnimations.totalTime), repeats: false)
-			// 3. request
-			let sendAgainRequest = UNNotificationRequest(identifier: "sendAgain", content: sendAgainContent, trigger: sendAgainTrigger)
-			UNUserNotificationCenter.current().add(sendAgainRequest, withCompletionHandler: { error in
-				if let e = error {
-					print(e)
-				}
+			CustomAnimations.fallingHeartsAnimation(view: tappedView, completion: {
+				Globals.user!.isAbleToSendLove = false
+				Globals.user!.dateLastTapped = Date()
+				self.createNotification()
+				self.showTimerLabel()
+				self.addBlockOverHeart(tappedView)
+				self.heartImage.isHidden = false
 			})
 			
 		}
@@ -117,14 +192,6 @@ class ViewController: UIViewController {
 	
 	@IBAction func animationOne(_ sender: Any) {
 		CustomAnimations.fallingHeartsAnimation(view: heartImage)
-	}
-	
-	override func viewWillAppear(_ animated: Bool) {
-		super.viewWillAppear(animated)
-		//MARK: NavigationBar
-		self.navigationController?.navigationBar.isHidden = true
-		self.navigationController?.modalPresentationStyle = .fullScreen
-		self.view.setNeedsDisplay()
 	}
 
 	@IBAction func returnToView(_ sender: Any) {
@@ -186,6 +253,24 @@ class ViewController: UIViewController {
 		}
 	}
 	
+	//MARK: Notifications received
+	func showNotificationGeneral() {
+		let notificationReceivedLabel = UILabel()
+		notificationReceivedLabel.textAlignment = .center
+		notificationReceivedLabel.font = UIFont.init(name: "Noteworthy Light", size: 20)
+		notificationReceivedLabel.text = "Someone's thinking about you!"
+		
+		// frame
+		notificationReceivedLabel.translatesAutoresizingMaskIntoConstraints = false
+		notificationReceivedLabel.frame.size = CGSize(width: self.view.frame.width, height: 32)
+		view.addSubview(notificationReceivedLabel)
+		NSLayoutConstraint.activate([
+			notificationReceivedLabel.topAnchor.constraint(equalTo: heartImage.bottomAnchor, constant: 8),
+			notificationReceivedLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
+			notificationReceivedLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 8),
+			notificationReceivedLabel.bottomAnchor.constraint(lessThanOrEqualTo: nicetyLabel.topAnchor, constant: -8)
+		])
+	}
 	
 //
 //	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

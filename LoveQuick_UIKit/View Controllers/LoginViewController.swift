@@ -81,12 +81,20 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 		return true
 	}
 	
+	func textFieldDidBeginEditing(_ textField: UITextField) {
+		errorMessage.isHidden = true // hide to make repeat errors clearer
+	}
+	
 	@IBAction func returnView(_ sender: Any) {
 		view.endEditing(true)
 	}
 	
 	@IBAction func signUpTapped(_ sender: Any) {
-		self.performSegue(withIdentifier: "navToSignUp", sender: nil)
+		guard let signUpVC = self.storyboard?.instantiateViewController(identifier: "signUp") else {
+			return
+		}
+		self.navigationController?.heroNavigationAnimationType = .pull(direction: .left)
+		self.navigationController?.pushViewController(signUpVC, animated: true)
 	}
 	
 	//MARK: Auth
@@ -94,13 +102,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 		let activity = UIActivityIndicatorView(style: .large)
 		activity.center = self.view.center
 		activity.frame = self.view.frame
-		activity.startAnimating()
-		self.view.addSubview(activity)
 		
-		if (emailField.hasText && passwordField.hasText) {
+		if (emailField.text!.contains("@") && passwordField.text!.count > 0) {
+			activity.startAnimating()
+			self.view.addSubview(activity)
 			Auth.auth().signIn(withEmail: emailField.text!, password: passwordField.text!) { result, error in
-				if (error != nil) {
-					self.errorMessage.isHidden = false
+				if let error = error {
+					//TODO: Enumerate errors
+					print("Raw error \(error)")
+					print("Error description \(error.localizedDescription)")
+					self.showErrorMessage(withMessage: "")
+					activity.stopAnimating()
 				} else {
 					activity.stopAnimating()
 					if isFirstTime() {
@@ -117,7 +129,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 					}
 				}
 			}			
+		} else {
+			self.showErrorMessage(withMessage: "You must enter a valid email address")
 		}
+	}
+	
+	private func showErrorMessage(withMessage text: String) {
+		errorMessage.text = text
+		errorMessage.isHidden = false
 	}
 	
 	func colorChangeTransition(of v: UIView, to vc: UIViewController, color: UIColor = .systemPink) {
@@ -126,6 +145,21 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 		}, completion: { _ in
 			self.navigationController?.pushViewController(vc, animated: true)
 		})
+	}
+	
+	enum ErrorMessages {
+		case invalidEmail(message: String)
+		case invalidPassword(message: String)
+		case timeout(message: String)
+		
+		var message: String {
+			switch self {
+				case .invalidEmail(let message),
+					 .invalidPassword(let message),
+					 .timeout(let message):
+				return message
+			}
+		}
 	}
 
 }

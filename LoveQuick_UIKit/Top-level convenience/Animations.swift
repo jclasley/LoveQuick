@@ -73,7 +73,7 @@ struct CustomAnimations {
 		)
 	}
 	
-	static func fallingHeartsAnimation (view tappedView: UIView) {
+	static func fallingHeartsAnimation (view tappedView: UIView, completion: @escaping () -> () = { }) {
 		guard let superview = tappedView.superview else {
 			print("Failure. Tapped view \(tappedView)")
 			return
@@ -94,7 +94,10 @@ struct CustomAnimations {
 					tappedView.center.y += tappedView.superview!.frame.height
 				})
 				UIView.addKeyframe(withRelativeStartTime: 0.3, relativeDuration: 0.7, animations: {
+					tappedView.alpha = 0 // hide during this so that it won't reappear
 					
+					
+					// label
 					l.text = "Love sent!"
 					l.font = UIFont(name: "Futura", size: 20)
 					l.frame = CGRect(origin: offscreenOrigin, size: CGSize(width: superview.frame.width, height: 50))
@@ -108,26 +111,16 @@ struct CustomAnimations {
 				})
 			}, completion: { _ in
 				tappedView.isHidden = true
-				tappedView.transform = CGAffineTransform(scaleX: 1, y: 1)
-				tappedView.center = superview.center
+				tappedView.alpha = 1 // reset
+				
 				randomHearts.removeFromSuperview()
-				DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+				DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+					tappedView.transform = CGAffineTransform(scaleX: 1, y: 1)
+					tappedView.center = superview.center
 					l.removeFromSuperview()
-					emptyHeart.frame = tappedView.frame
-					emptyHeart.translatesAutoresizingMaskIntoConstraints = false
-					
-					addBlockOverHeart(tappedView)
-					tappedView.superview!.addSubview(emptyHeart)
-					NSLayoutConstraint.activate([
-						emptyHeart.topAnchor.constraint(equalTo: tappedView.topAnchor),
-						emptyHeart.leadingAnchor.constraint(equalTo: tappedView.leadingAnchor),
-						emptyHeart.centerXAnchor.constraint(equalTo: tappedView.centerXAnchor),
-						emptyHeart.bottomAnchor.constraint(equalTo: tappedView.bottomAnchor)
-					])
-					emptyHeart.contentMode = .scaleAspectFit
-					tappedView.isHidden = false
-					addTimer(over: tappedView)
+					completion()
 				})
+				
 			} )
 		
 	}
@@ -176,7 +169,6 @@ struct CustomAnimations {
 		heart.superview!.addSubview(heartCover)
 		NSLayoutConstraint.activate([
 			heartCover.topAnchor.constraint(equalTo: heart.topAnchor),
-			heartCover.bottomAnchor.constraint(equalTo: heart.bottomAnchor),
 			heartCover.leadingAnchor.constraint(equalTo: heart.leadingAnchor),
 			heartCover.trailingAnchor.constraint(equalTo: heart.trailingAnchor)
 		])
@@ -186,33 +178,32 @@ struct CustomAnimations {
 	
 	static var initialHeartCoverHeight: CGFloat = 0
 	static func addTimer(over v: UIView) {
-		let timerLabel = UILabel()
-		timerLabel.frame = CGRect(x: 0, y: 0, width: 50, height: 25)
-		timerLabel.textAlignment = .center
-		timerLabel.backgroundColor = .clear
-		_ = CustomAnimations.timeText.bind(to: timerLabel.rx.text)
-		v.superview!.addSubview(timerLabel)
-		timerLabel.center = CGPoint(x: v.center.x, y: v.frame.minY)
+//		let timerLabel = UILabel()
+//		timerLabel.frame = CGRect(x: 0, y: 0, width: 50, height: 25)
+//		timerLabel.textAlignment = .center
+//		timerLabel.backgroundColor = .clear
+//		_ = CustomAnimations.timeText.bind(to: timerLabel.rx.text)
+//		v.superview!.addSubview(timerLabel)
+//		timerLabel.center = CGPoint(x: v.center.x, y: v.frame.minY)
 
-//		Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { timer in
-//			if totalTimePast < totalTime {
-//				// Reduce height of covering block
-//
-////				heartCover.transform = CGAffineTransform(scaleX: 1, y: 1)
-//				CustomAnimations.totalTimePast += 1
+		Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { timer in
+			if totalTimePast < totalTime {
+				// Reduce height of covering block
+
+//				heartCover.transform = CGAffineTransform(scaleX: 1, y: 1)
+				CustomAnimations.totalTimePast += 1
 //				let min = Int((CustomAnimations.totalTime - CustomAnimations.totalTimePast) / 60)
 //				let sec = (CustomAnimations.totalTime - CustomAnimations.totalTimePast) % 60
 //				CustomAnimations.timeText.onNext("\(min >= 10 ? min.description : "0" + min.description):\(sec >= 10 ? sec.description : "0" + sec.description)")
-//				heartCover.frame.size.height = initialHeartCoverHeight - (CGFloat(initialHeartCoverHeight/CGFloat(CustomAnimations.totalTime))*CGFloat(CustomAnimations.totalTimePast))
-//			}
-//			else {
-//				Globals.user!.isAbleToSendLove = true
-//				heartCover.removeFromSuperview()
-//				timerLabel.removeFromSuperview()
-//				resetTotalTime()
-//				timer.invalidate()
-//			}
-//		})
+				heartCover.frame.size.height = initialHeartCoverHeight - (CGFloat(initialHeartCoverHeight/CGFloat(CustomAnimations.totalTime))*CGFloat(CustomAnimations.totalTimePast))
+			}
+			else {
+				Globals.user!.isAbleToSendLove = true
+				heartCover.removeFromSuperview()
+				resetTotalTime()
+				timer.invalidate()
+			}
+		})
 		
 		
 	}
